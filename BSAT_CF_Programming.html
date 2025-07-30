@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Fundamentals and Programming (JAVA) Syllabus</title>
+    <!-- Tailwind CSS CDN for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter for clean typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles for the Inter font and smooth transitions */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5; /* Light gray background */
+        }
+        .section-fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .section-fade-in.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Modal specific styles */
+        .modal-overlay {
+            background-color: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+        }
+        .modal-content {
+            max-height: 90vh; /* Limit modal height */
+            overflow-y: auto; /* Enable scrolling for long content */
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8">
+        <div class="bg-white shadow-xl rounded-2xl p-6 md:p-10 my-8 border border-gray-200">
+
+            <!-- Header Section -->
+            <header class="text-center mb-10">
+                <h1 class="text-3xl sm:text-4xl font-extrabold text-blue-800 mb-2">Syllabus of Instruction</h1>
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-700 mb-4">Computer Fundamentals and Programming (JAVA)</h2>
+                <p class="text-lg text-gray-600">
+                    **Course Title:** Computer Fundamentals and Programming (JAVA)<br>
+                    **Course Code:** ______<br>
+                    **Credit Units:** 2 Units (6 hours Laboratory)<br>
+                    **Pre-requisite(s):** _____<br>
+                    **Program:** Bachelor of Science in Air Transportation<br>
+                    **Institution:** Philippine State College of Aeronautics (PhilSCA)<br>
+                    **Academic Year:** 2025-2026]<br>
+                    **Instructor:** RONALD T. LAVA, MSIT
+                </p>
+            </header>
+
+            <!-- Course Description -->
+            <section id="course-description" class="mb-8 p-6 bg-blue-50 rounded-xl shadow-md section-fade-in">
+                <h3 class="text-2xl font-semibold text-blue-700 mb-4 border-b-2 border-blue-300 pb-2">1. Course Description</h3>
+                <p class="text-base leading-relaxed">
+                    This course introduces Air Transportation students to the fundamental concepts of computer hardware, software, operating systems, and networking. It then transitions into the principles of programming, emphasizing algorithmic thinking, problem-solving, and structured programming. A significant portion of the course is dedicated to object-oriented programming using Java, focusing on its application in developing logical solutions and simple tools relevant to the aviation industry. Students will gain practical skills in writing, debugging, and executing Java programs, preparing them to understand and potentially contribute to the technological aspects of modern air transportation systems.
+                </p>
+            </section>
+
+            <!-- Course Objectives / Learning Outcomes -->
+            <section id="course-objectives" class="mb-8 p-6 bg-green-50 rounded-xl shadow-md section-fade-in">
+                <h3 class="text-2xl font-semibold text-green-700 mb-4 border-b-2 border-green-300 pb-2">2. Course Objectives / Learning Outcomes</h3>
+                <p class="text-base mb-3">Upon successful completion of this course, students will be able to:</p>
+                <ul class="list-disc list-inside space-y-2 text-base">
+                    <li><strong class="text-green-800">CO1:</strong> Understand the basic components and functions of computer hardware, software, and operating systems.</li>
+                    <li><strong class="text-green-800">CO2:</strong> Explain fundamental networking concepts and their relevance in modern communication systems, particularly in aviation.</li>
+                    <li><strong class="text-green-800">CO3:</strong> Apply logical thinking and problem-solving techniques to design algorithms using flowcharts and pseudocode.</li>
+                    <li><strong class="text-green-800">CO4:</strong> Write, compile, and execute basic Java programs utilizing fundamental syntax, data types, and control structures.</li>
+                    <li><strong class="text-green-800">CO5:</strong> Implement Object-Oriented Programming (OOP) principles (encapsulation, inheritance, polymorphism, abstraction) in Java.</li>
+                    <li><strong class="text-green-800">CO6:</strong> Develop simple Java applications that demonstrate file handling, basic data structures, and user interface elements.</li>
+                    <li><strong class="text-green-800">CO7:</strong> Relate programming concepts and computational thinking to real-world scenarios and potential applications within the air transportation sector.</li>
+                </ul>
+            </section>
+
+            <!-- Course Content / Topics -->
+            <section id="course-content" class="mb-8 p-6 bg-purple-50 rounded-xl shadow-md section-fade-in">
+                <h3 class="text-2xl font-semibold text-purple-700 mb-4 border-b-2 border-purple-300 pb-2">3. Course Content / Topics</h3>
+                <p class="text-base mb-4">This course will cover the following topics, structured over a [15+3] week period:</p>
+
+                <!-- Module 1 -->
+                <div class="mb-6 p-4 bg-purple-100 rounded-lg shadow-sm">
+                    <h4 class="text-xl font-semibold text-purple-800 mb-2">Module 1: Introduction to Computers and Information Technology (Weeks 1-3)</h4>
+                    <ul class="list-disc list-inside space-y-1 text-sm">
+                        <li>**Topic 1.1:** Introduction to Computers
+                            <ul class="list-circle list-inside ml-4">
+                                <li>Definition, History, Generations of Computers</li>
+                                <li>Types of Computers (Supercomputer, Mainframe, Minicomputer, Microcomputer)</li>
+                                <li>Components: Hardware vs. Software</li>
+                            </ul>
+                        </li>
+                        <li>**Topic 1.2:** Computer Hardware
+                            <ul class="list-circle list-inside ml-4">
+                                <li>Input Devices (Keyboard, Mouse, Scanners, Microphones)</li>
+                                <li>Output Devices (Monitors, Printers, Speakers)</li>
+                                <li>Central Processing Unit (CPU): Components and Functions</li>
+                                <li>Memory (RAM, ROM, Cache)</li>
+                                <li>Storage Devices (HDD, SSD, USB drives, Cloud Storage)</li>
+                            </ul>
+                        </li>
+                        <li>**Topic 1.3:** Computer Software
+                            <ul class="list-circle list-inside ml-4">
+                                <li>System Software (Operating Systems, Utility Programs, Device Drivers)</li>
+                                <li>Application Software (Word Processors, Spreadsheets, Databases, Aviation-specific software examples)</li>
+                            </ul>
+                        </li>
+                        <li>**Topic 1.4:** Operating Systems
+                            <ul class="list-circle list-inside ml-4">
+                                <li>Functions of an OS</li>
+                                <li>Types of OS (Windows, macOS, Linux, Mobile OS)</li>
+                                <li>Basic OS commands and file management</li>
+                            </ul>
+                        </li>
+                        <li>**Topic 1.5:** Computer Networks and Internet
+                            <ul class="list-circle list-inside ml-4">
+                                <li>Network Topologies (LAN, WAN)</li>
+                                <li>Network Devices (Routers, Switches, Hubs)</li>
+                                <li>Protocols (TCP/IP, HTTP, FTP)</li>
+                                <li>Introduction to the Internet and its services</li>
+                                <li>Relevance in Air Traffic Management (ATM) and airline operations</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Module 2 -->
+                <div class="mb-6 p-4 bg-purple-100 rounded-lg shadow-sm">
+                    <h4 class="text-xl font-semibold text-purple-800 mb-2">Module 2: Fundamentals of Programming and Algorithmic Thinking (Weeks 4-6)</h4>
+                    <ul class="list-disc list-inside space-y-1 text-sm">
+                        <li>**Topic 2.1:** Introduction to Programming
+                            <ul class="list-circle list-inside ml-4">
+                                <li>What is Programming? Why Program?</li>
+                                <li>Programming Languages (High-level vs. Low-level)</li>
+                                <li>Compilers and Interpreters</li>
+                            </ul>
+                        </li>
+                        <li>**Topic 2.2:** Problem Solving and Algorithms
+                            <ul class="list-circle list-inside ml-4">
+                                <li>Steps in Problem Solving</li>
+                                <li>Definition of Algorithm Characteristics</li>
+                                <li>Developing Algorithms for simple problems</li>
+                            </ul>
+                        </li>
+                        <li>**Topic 2.3:** Pseudocode
+                            <ul class="list-circle list-inside ml-4">
+                                <li>Rules and conventions for writing pseudocode</li>
+                                <li>Translating simple problems into pseudocode</li>
+                            </ul>
+                        </li>
+                        <li>**Topic 2.4:** Flowcharting
+                            <ul class="list-circle list-inside ml-4">
+                                <li>Standard Flowchart Symbols</li>
+                                <li>Drawing Flowcharts for various logical constructs (sequence, selection, iteration)</li>
+                                <li>Tracing Flowcharts</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Module 3 -->
+                <div class="mb-6 p-4 bg-purple-100 rounded-lg shadow-sm">
+                    <h4 class="text-xl font-semibold text-purple-800 mb-2">Module 3: Introduction to Java Programming (Weeks 7-9)</h4>
+                    <ul class="list-disc list-inside space-y-1 text-sm">
+                        <li>**Topic 3.1:** Getting Started with Java
+                            <ul class="list-circle list-inside ml-4">
+                                <li>History and Features of Java</li>
+                                <li>Java Development Kit (JDK), Java Runtime Environment (JRE), Java Virtual Machine (JVM)</li>
+                                <li>Setting up a Java Development Environment (IDE like IntelliJ IDEA, Eclipse, or VS Code)</li>
+                                <li>Writing and Compiling your First Java Program (`Hello World`)</li>
+                            </ul>
+                        </li>
+                        <li>**Topic 3.2:** Java Basics: Syntax and Structure
+                            <ul class="list-circle list-inside ml-4">
+                                <li>Comments, Keywords, Identifiers</li>
+                                <li>Basic Program Structure (`public static void main(String[] args)`)</li>
+                            </ul>
+                        </li>
+                        <li>**Topic 3.3:** Data Types and Variables
+                            <ul class="list-circle list-inside ml-4">
+                                <li>Primitive Data Types (int, double, char, boolean, etc.)</li>
+                                <li>Declaring and Initializing Variables</li>
+                                <li>Type Casting</li>
+                            </ul>
+                        </li>
+                        <li>**Topic 3.4:** Operators
+                            <ul class="list-circle list-inside ml-4">
+                                <li>Arithmetic, Relational, Logical, Assignment, Increment/Decrement Operators</li>
+                                <li>Operator Precedence</li>
+                            </ul>
+                        </li>
+                        <li>**Topic 3.5:** Input and Output
+                            <ul class="list-circle list-inside ml-4">
+                                <li>Using `System.out.println()` and `System.out.print()`</li>
+                                <li>Reading User Input with `Scanner` Class</li>
+                            </ul>
+                        </li>
+                        <li>**Topic 3.6:** Control Structures
+                            <ul class="list-circle list-inside ml-4">
+                                <li>**Selection Statements:** `if`, `if-else`, `if-else if-else`, `switch`</li>
+                                <li>**Looping Statements:** `while`, `do-while`, `for` loops</li>
+                                <li>`break` and `continue` statements</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Module 4 -->
+                <div class="mb-6 p-4 bg-purple-100 rounded-lg shadow-sm">
+                    <h4 class="text-xl font-semibold text-purple-800 mb-2">Module 4: Object-Oriented Programming (OOP) in Java (Weeks 10-13)</h4>
+                    <ul class="list-disc list-inside space-y-1 text-sm">
+                        <li>**Topic 4.1:** Introduction to OOP Concepts
+                            <ul class="list-circle list-inside ml-4">
+                                <li>Objects and Classes</li>
+                                <li>Advantages of OOP</li>
+                            </ul>
+                        </li>
+                        <li>**Topic 4.2:** Classes and Objects
+                            <ul class="list-circle list-inside ml-4">
+                                <li>Defining Classes (Attributes/Fields, Methods)</li>
+                                <li>Creating Objects</li>
+                                <li>Constructors (Default, Parameterized)</li>
+                                <li>`this` Keyword</li>
+                            </ul>
+                        </li>
+                        <li>**Topic 4.3:** Encapsulation
+                            <ul class="list-circle list-inside ml-4">
+                                <li>Access Modifiers (`public`, `private`, `protected`, default)</li>
+                                <li>Getters and Setters</li>
+                            </ul>
+                        </li>
+                        <li>**Topic 4.4:** Inheritance
+                            <ul class="list-circle list-inside ml-4">
+                                <li>`extends` Keyword</li>
+                                <li>`super` Keyword</li>
+                                <li>Method Overriding</li>
+                            </ul>
+                        </li>
+                        <li>**Topic 4.5:** Polymorphism
+                            <ul class="list-circle list-inside ml-4">
+                                <li>Method Overloading</li>
+                                <li>Runtime Polymorphism (Dynamic Method Dispatch)</li>
+                            </ul>
+                        </li>
+                        <li>**Topic 4.6:** Abstraction
+                            <ul class="list-circle list-inside ml-4">
+                                <li>Abstract Classes and Abstract Methods</li>
+                                <li>Interfaces</li>
+                            </ul>
+                        </li>
+                        <li>**Topic 4.7:** Packages and JAR Files
+                            <ul class="list-circle list-inside ml-4">
+                                <li>Organizing classes into packages</li>
+                                <li>Creating and using JAR files</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Module 5 -->
+                <div class="mb-6 p-4 bg-purple-100 rounded-lg shadow-sm">
+                    <h4 class="text-xl font-semibold text-purple-800 mb-2">Module 5: Advanced Java Concepts and Applications (Weeks 14-16)</h4>
+                    <ul class="list-disc list-inside space-y-1 text-sm">
+                        <li>**Topic 5.1:** Arrays
+                            <ul class="list-circle list-inside ml-4">
+                                <li>One-dimensional Arrays</li>
+                                <li>Multi-dimensional Arrays</li>
+                                <li>Array of Objects</li>
+                            </ul>
+                        </li>
+                        <li>**Topic 5.2:** String Handling
+                            <ul class="list-circle list-inside ml-4">
+                                <li>`String` Class and its methods</li>
+                                <li>`StringBuilder` and `StringBuffer`</li>
+                            </ul>
+                        </li>
+                        <li>**Topic 5.3:** Exception Handling
+                            <ul class="list-circle list-inside ml-4">
+                                <li>`try-catch-finally` block</li>
+                                <li>`throw` and `throws` keywords</li>
+                                <li>Custom Exceptions</li>
+                            </ul>
+                        </li>
+                        <li>**Topic 5.4:** File Input/Output (I/O)
+                            <ul class="list-circle list-inside ml-4">
+                                <li>`File` Class</li>
+                                <li>Reading from and Writing to Text Files (`FileReader`, `FileWriter`, `BufferedReader`, `BufferedWriter`)</li>
+                                <li>Introduction to Binary File I/O (Optional/Brief)</li>
+                                <li>*Practical Application:* Reading/writing flight data logs, passenger manifests (simplified).</li>
+                            </ul>
+                        </li>
+                        <li>**Topic 5.5:** Introduction to Graphical User Interface (GUI) with Swing/JavaFX (Basic)
+                            <ul class="list-circle list-inside ml-4">
+                                <li>Creating simple windows, buttons, text fields</li>
+                                <li>Event Handling (Action Listeners)</li>
+                                <li>*Practical Application:* Simple flight status display, calculator for aviation metrics.</li>
+                            </ul>
+                        </li>
+                        <li>**Topic 5.6:** Introduction to Data Structures (Brief Overview)
+                            <ul class="list-circle list-inside ml-4">
+                                <li>Lists (ArrayList)</li>
+                                <li>Maps (HashMap)</li>
+                            </ul>
+                        </li>
+                        <li>**Topic 5.7:** Programming Applications in Air Transportation
+                            <ul class="list-circle list-inside ml-4">
+                                <li>Discussion of how programming is used in:</li>
+                                <ul class="list-square list-inside ml-6">
+                                    <li>Air Traffic Control (ATC) systems</li>
+                                    <li>Flight Planning and Optimization</li>
+                                    <li>Aircraft Maintenance and Diagnostics</li>
+                                    <li>Airline Reservation Systems</li>
+                                    <li>Crew Scheduling</li>
+                                    <li>Simulators</li>
+                                </ul>
+                                <li>Mini-Project: Students will propose and develop a small Java application related to air transportation (e.g., a simple flight time calculator, a basic passenger manifest manager, a unit converter for aviation metrics, a simple aircraft weight and balance tool).</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Teaching Methodologies -->
+            <section id="teaching-methodologies" class="mb-8 p-6 bg-yellow-50 rounded-xl shadow-md section-fade-in">
+                <h3 class="text-2xl font-semibold text-yellow-700 mb-4 border-b-2 border-yellow-300 pb-2">4. Teaching Methodologies</h3>
+                <p class="text-base mb-3">The course will employ a blended approach to facilitate effective learning:</p>
+                <ul class="list-disc list-inside space-y-2 text-base">
+                    <li><strong class="text-yellow-800">Lectures:</strong> Explanations of theoretical concepts, principles, and syntax.</li>
+                    <li><strong class="text-yellow-800">Hands-on Laboratory Sessions:</strong> Practical exercises, coding drills, and guided programming tasks.</li>
+                    <li><strong class="text-yellow-800">Problem-Based Learning:</strong> Students will be presented with real-world (or simulated) aviation-related problems to solve using programming.</li>
+                    <li><strong class="text-yellow-800">Demonstrations:</strong> Live coding and demonstration of software tools and programming techniques.</li>
+                    <li><strong class="text-yellow-800">Collaborative Learning:</strong> Group activities and peer programming for complex tasks.</li>
+                    <li><strong class="text-yellow-800">Project-Based Learning:</strong> A culminating mini-project requiring application of learned concepts.</li>
+                </ul>
+            </section>
+
+            <!-- Assessment / Grading System -->
+            <section id="assessment-grading" class="mb-8 p-6 bg-red-50 rounded-xl shadow-md section-fade-in">
+                <h3 class="text-2xl font-semibold text-red-700 mb-4 border-b-2 border-red-300 pb-2">5. Assessment / Grading System</h3>
+                <p class="text-base mb-3">Student performance will be evaluated based on the following components:</p>
+                <ul class="list-disc list-inside space-y-2 text-base">
+                    <li><strong class="text-red-800">Quizzes (20%):</strong> Short assessments to check understanding of theoretical concepts and syntax.</li>
+                    <li><strong class="text-red-800">Laboratory Exercises / Assignments (30%):</strong> Practical coding tasks, problem-solving assignments, and regular programming exercises.</li>
+                    <li><strong class="text-red-800">Midterm Examination (20%):</strong> Covers Modules 1-3.</li>
+                    <li><strong class="text-red-800">Final Examination (20%):</strong> Comprehensive, with emphasis on Modules 4-5.</li>
+                    <li><strong class="text-red-800">Mini-Project (10%):</strong> Design, implementation, and presentation of a small Java application relevant to air transportation.</li>
+                </ul>
+                <p class="text-base mt-4">
+                    **Grading Scale:**<br>
+                    [To be filled by Institution/Instructor, e.g., 90-100% = A, 80-89% = B, etc.]
+                </p>
+            </section>
+
+            <!-- Required Readings / References -->
+            <section id="references" class="mb-8 p-6 bg-indigo-50 rounded-xl shadow-md section-fade-in">
+                <h3 class="text-2xl font-semibold text-indigo-700 mb-4 border-b-2 border-indigo-300 pb-2">6. Required Readings / References</h3>
+                <h4 class="text-xl font-semibold text-indigo-800 mb-2">Textbooks:</h4>
+                <ul class="list-disc list-inside space-y-2 text-base mb-4">
+                    <li>Deitel, P., & Deitel, H. (Latest Edition). <em>Java How to Program, Early Objects</em>. Pearson.</li>
+                    <li>Gaddis, T. (Latest Edition). <em>Starting Out with Java: From Control Structures through Objects</em>. Pearson.</li>
+                </ul>
+                <h4 class="text-xl font-semibold text-indigo-800 mb-2">Online Resources:</h4>
+                <ul class="list-disc list-inside space-y-2 text-base">
+                    <li>Oracle Java Documentation: <a href="https://docs.oracle.com/en/java/" target="_blank" class="text-blue-600 hover:underline">https://docs.oracle.com/en/java/</a></li>
+                    <li>W3Schools Java Tutorial: <a href="https://www.w3schools.com/java/" target="_blank" class="text-blue-600 hover:underline">https://www.w3schools.com/java/</a></li>
+                    <li>GeeksforGeeks Java Tutorials: <a href="https://www.geeksforgeeks.org/java/" target="_blank" class="text-blue-600 hover:underline">https://www.geeksforgeeks.org/java/</a></li>
+                    <li>TutorialsPoint Java Tutorial: <a href="https://www.tutorialspoint.com/java/index.htm" target="_blank" class="text-blue-600 hover:underline">https://www.tutorialspoint.com/java/index.htm</a></li>
+                </ul>
+            </section>
+
+            <!-- Classroom Policies (Trigger for Modal) -->
+            <section id="classroom-policies-trigger" class="mb-8 p-6 bg-gray-100 rounded-xl shadow-md text-center section-fade-in">
+                <h3 class="text-2xl font-semibold text-gray-700 mb-4">7. Classroom Policies</h3>
+                <p class="text-base mb-4">Click the button below to view the detailed classroom policies.</p>
+                <button id="openPolicyModal" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                    View Classroom Policies
+                </button>
+            </section>
+
+            <!-- Footer Section -->
+            <footer class="text-center text-sm text-gray-500 mt-10 pt-6 border-t border-gray-300">
+                <p><strong>Prepared by:</strong> RONALD T. LAVA, MSIT/INSTITUTE OF COMPUTER STUDIES</p>
+                <p><strong>Date:</strong> AY 2026-2026</p>
+                <p class="mt-4"><strong>1st Semester</strong> </p>
+            </footer>
+
+        </div>
+    </div>
+
+    <!-- Modal Structure for Classroom Policies -->
+    <div id="policyModal" class="fixed inset-0 hidden flex items-center justify-center modal-overlay transition-opacity duration-300 ease-in-out opacity-0">
+        <div class="bg-white p-8 rounded-2xl shadow-2xl w-11/12 md:w-2/3 lg:w-1/2 modal-content transform scale-95 transition-transform duration-300 ease-in-out">
+            <div class="flex justify-between items-center mb-6 border-b-2 border-gray-200 pb-3">
+                <h3 class="text-2xl font-bold text-gray-800">Classroom Policies</h3>
+                <button id="closePolicyModal" class="text-gray-500 hover:text-gray-700 text-3xl font-bold leading-none focus:outline-none">
+                    &times;
+                </button>
+            </div>
+            <div class="text-base leading-relaxed space-y-3">
+                <p><strong class="text-gray-900">Attendance:</strong> Regular and punctual attendance is expected. Absences exceeding [e.g., 20%] of total contact hours may result in a failing grade.</p>
+                <p><strong class="text-gray-900">Participation:</strong> Active participation in discussions and laboratory activities is encouraged.</p>
+                <p><strong class="text-gray-900">Academic Integrity:</strong> All submitted work must be original. Plagiarism, cheating, or any form of academic dishonesty will result in severe penalties as per PhilSCA's academic policies.</p>
+                <p><strong class="text-gray-900">Laboratory Rules:</strong> Adherence to laboratory rules and proper care of equipment is mandatory.</p>
+                <p><strong class="text-gray-900">Respectful Environment:</strong> Students are expected to maintain a respectful and conducive learning environment for all.</p>
+                <p><strong class="text-gray-900">Submission Deadlines:</strong> All assignments and projects must be submitted by the specified deadlines. Late submissions may incur penalties.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Get references to modal elements
+        const policyModal = document.getElementById('policyModal');
+        const openPolicyModalBtn = document.getElementById('openPolicyModal');
+        const closePolicyModalBtn = document.getElementById('closePolicyModal');
+
+        // Function to open the modal
+        function openModal() {
+            policyModal.classList.remove('hidden');
+            // Add animation classes
+            setTimeout(() => {
+                policyModal.classList.add('opacity-100');
+                policyModal.querySelector('.modal-content').classList.remove('scale-95');
+                policyModal.querySelector('.modal-content').classList.add('scale-100');
+            }, 10); // Small delay to allow 'hidden' to be removed first
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            // Add animation classes for closing
+            policyModal.classList.remove('opacity-100');
+            policyModal.querySelector('.modal-content').classList.remove('scale-100');
+            policyModal.querySelector('.modal-content').classList.add('scale-95');
+            setTimeout(() => {
+                policyModal.classList.add('hidden');
+            }, 300); // Match transition duration
+        }
+
+        // Event listeners for opening and closing the modal
+        openPolicyModalBtn.addEventListener('click', openModal);
+        closePolicyModalBtn.addEventListener('click', closeModal);
+
+        // Close modal if user clicks outside the content
+        policyModal.addEventListener('click', (event) => {
+            if (event.target === policyModal) {
+                closeModal();
+            }
+        });
+
+        // Intersection Observer for fade-in animation on sections
+        const sections = document.querySelectorAll('.section-fade-in');
+
+        const observerOptions = {
+            root: null, // viewport
+            rootMargin: '0px',
+            threshold: 0.1 // 10% of the section must be visible
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target); // Stop observing once visible
+                }
+            });
+        }, observerOptions);
+
+        // Observe each section
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Ensure initial sections are visible if already in viewport on load
+        window.addEventListener('load', () => {
+            sections.forEach(section => {
+                if (section.getBoundingClientRect().top < window.innerHeight) {
+                    section.classList.add('is-visible');
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>

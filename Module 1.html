@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 1: Computer Fundamentals & IT</title>
+    <!-- Tailwind CSS CDN for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter for clean typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles for the Inter font and smooth transitions */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Light blue-gray background */
+            color: #334155; /* Dark slate gray text */
+        }
+        .container {
+            max-width: 1200px;
+        }
+        .section-card {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0; /* Light border */
+            border-radius: 1.5rem; /* More rounded corners */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Soft shadow */
+            padding: 2.5rem; /* Increased padding */
+            margin-bottom: 2.5rem; /* Increased bottom margin */
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .section-card.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .section-heading {
+            font-size: 2.25rem; /* text-4xl */
+            font-weight: 700; /* font-bold */
+            color: #1e3a8a; /* Darker blue */
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #60a5fa; /* Blue underline */
+            padding-bottom: 0.75rem;
+        }
+        .sub-heading {
+            font-size: 1.75rem; /* text-3xl */
+            font-weight: 600; /* font-semibold */
+            color: #1d4ed8; /* Medium blue */
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        .topic-heading {
+            font-size: 1.5rem; /* text-2xl */
+            font-weight: 600;
+            color: #2563eb; /* Cobalt blue */
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        ul.list-disc li, ol.list-decimal li {
+            margin-bottom: 0.5rem;
+        }
+        ul.list-circle li {
+            list-style-type: circle;
+        }
+        ul.list-square li {
+            list-style-type: square;
+        }
+        /* Image styling */
+        .content-image {
+            width: 100%;
+            max-width: 400px; /* Limit max width for images */
+            height: auto;
+            border-radius: 0.75rem; /* Rounded image corners */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            margin: 1.5rem auto; /* Center images */
+            display: block;
+        }
+        /* Specific styling for the lab activity instructions */
+        .lab-instruction-item {
+            background-color: #f7fafc; /* Very light gray */
+            padding: 1.25rem;
+            border-left: 4px solid #3b82f6; /* Blue left border */
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .lab-instruction-item strong {
+            color: #1e40af; /* Darker blue for emphasis */
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="container mx-auto p-4 sm:p-6 lg:p-10">
+
+        <!-- Header Section -->
+        <header class="text-center mb-12 py-8 bg-gradient-to-r from-blue-700 to-blue-900 text-white rounded-3xl shadow-xl">
+            <h1 class="text-4xl sm:text-5xl font-extrabold mb-3 tracking-tight">Computer Fundamentals and Programming (JAVA)</h1>
+            <h2 class="text-2xl sm:text-3xl font-semibold opacity-90">Module 1: Introduction to Computers and Information Technology</h2>
+            <p class="mt-4 text-lg opacity-80">Philippine State College of Aeronautics (PhilSCA) - Air Transportation Program</p>
+        </header>
+
+        <!-- Module Introduction -->
+        <section class="section-card">
+            <p class="text-lg leading-relaxed text-gray-700">
+                This module lays the groundwork for understanding the fundamental building blocks of modern computing and information systems. For Air Transportation students, grasping these basics is crucial as technology underpins every aspect of contemporary aviation, from flight control to passenger management.
+            </p>
+        </section>
+
+        <!-- Module Learning Objectives -->
+        <section class="section-card">
+            <h3 class="section-heading">Module 1 Learning Objectives</h3>
+            <p class="text-lg mb-4 text-gray-700">Upon completion of Module 1, students will be able to:</p>
+            <ul class="list-disc list-inside space-y-2 text-base md:text-lg">
+                <li><strong class="text-blue-700">Define</strong> what a computer is and trace its historical evolution through different generations.</li>
+                <li><strong class="text-blue-700">Differentiate</strong> between various types of computers based on their size, processing power, and application.</li>
+                <li><strong class="text-blue-700">Identify and describe</strong> the core components of computer hardware and software.</li>
+                <li><strong class="text-blue-700">Explain</strong> the primary functions of an operating system and perform basic file management tasks.</li>
+                <li><strong class="text-blue-700">Understand</strong> fundamental networking concepts, including topologies, devices, and protocols.</li>
+                <li><strong class="text-blue-700">Discuss</strong> the relevance of computer networks and information technology in the context of air traffic management and airline operations.</li>
+            </ul>
+        </section>
+
+        <!-- Module Discussion of Topics -->
+        <section class="section-card">
+            <h3 class="section-heading">Module 1: Complete Discussion of Topics</h3>
+
+            <!-- Topic 1.1: Introduction to Computers -->
+            <div class="mb-8">
+                <h4 class="topic-heading">Topic 1.1: Introduction to Computers</h4>
+                <p class="text-base leading-relaxed mb-4">
+                    A <strong class="text-blue-600">computer</strong> is an electronic device that manipulates information, or data. It has the ability to store, retrieve, and process data. Computers have evolved dramatically over time, moving through distinct <strong class="text-blue-600">generations</strong>, each marked by significant technological advancements.
+                </p>
+                <ul class="list-disc list-inside ml-4 space-y-2 text-sm md:text-base mb-4">
+                    <li><strong class="text-gray-800">First Generation (1940s-1950s):</strong> Characterized by <strong class="text-blue-600">vacuum tubes</strong> for circuitry and magnetic drums for memory. They were enormous, consumed vast amounts of electricity, and generated a lot of heat. Programming was done in machine language.</li>
+                    <li><strong class="text-gray-800">Second Generation (1950s-1960s):</strong> Introduced <strong class="text-blue-600">transistors</strong>, which replaced vacuum tubes, making computers smaller, faster, cheaper, and more energy-efficient. High-level programming languages like COBOL and FORTRAN emerged.</li>
+                    <li><strong class="text-gray-800">Third Generation (1960s-1970s):</strong> The invention of the <strong class="text-blue-600">integrated circuit (IC)</strong> was the hallmark. This allowed many transistors to be placed on a single silicon chip, further shrinking computers and increasing their speed and efficiency. Operating systems were introduced.</li>
+                    <li><strong class="text-gray-800">Fourth Generation (1970s-present):</strong> Marked by the <strong class="text-blue-600">microprocessor</strong>, which brought the entire CPU onto a single chip. This led to the development of personal computers (PCs). The internet and graphical user interfaces (GUIs) became widespread.</li>
+                    <li><strong class="text-gray-800">Fifth Generation (Present and Beyond):</strong> Focuses on <strong class="text-blue-600">Artificial Intelligence (AI)</strong>, parallel processing, and natural language understanding. Quantum computing is an emerging area in this generation.</li>
+                </ul>
+                <img src="https://placehold.co/600x300/a7d9f7/1e3a8a?text=Computer+Generations" alt="Image representing computer generations" class="content-image" onerror="this.onerror=null;this.src='https://placehold.co/600x300/cccccc/333333?text=Image+Not+Found';">
+
+                <p class="text-base leading-relaxed mb-4">
+                    Computers come in various forms, each suited for different tasks:
+                </p>
+                <ul class="list-disc list-inside ml-4 space-y-2 text-sm md:text-base">
+                    <li><strong class="text-gray-800">Supercomputers:</strong> The fastest and most powerful computers, used for complex calculations and simulations (e.g., weather forecasting, aerospace design).</li>
+                    <li><strong class="text-gray-800">Mainframe Computers:</strong> Large, powerful computers used by large organizations for critical applications, data processing, and transaction handling (e.g., airline reservation systems).</li>
+                    <li><strong class="text-gray-800">Minicomputers (Mid-range Servers):</strong> Smaller than mainframes but more powerful than microcomputers, often used for specific tasks in businesses.</li>
+                    <li><strong class="text-gray-800">Microcomputers (Personal Computers):</strong> The most common type, including desktops, laptops, tablets, and smartphones.</li>
+                </ul>
+                <img src="https://placehold.co/600x300/c3e6cb/1e3a8a?text=Types+of+Computers" alt="Image representing different types of computers" class="content-image" onerror="this.onerror=null;this.src='https://placehold.co/600x300/cccccc/333333?text=Image+Not+Found';">
+                <p class="text-base leading-relaxed mt-4">
+                    The fundamental distinction in a computer system is between <strong class="text-blue-600">hardware</strong> (the physical components) and <strong class="text-blue-600">software</strong> (the instructions that tell the hardware what to do).
+                </p>
+            </div>
+
+            <!-- Topic 1.2: Computer Hardware -->
+            <div class="mb-8">
+                <h4 class="topic-heading">Topic 1.2: Computer Hardware</h4>
+                <p class="text-base leading-relaxed mb-4">
+                    <strong class="text-blue-600">Hardware</strong> refers to the tangible, physical parts of a computer system.
+                </p>
+                <ul class="list-disc list-inside ml-4 space-y-2 text-sm md:text-base mb-4">
+                    <li><strong class="text-gray-800">Input Devices:</strong> Allow users to feed data into the computer. Examples include <strong class="text-blue-600">keyboards</strong> (for text input), <strong class="text-blue-600">mice</strong> (for navigation and selection), <strong class="text-blue-600">scanners</strong> (for converting physical documents into digital images), and <strong class="text-blue-600">microphones</strong> (for audio input).</li>
+                    <li><strong class="text-gray-800">Output Devices:</strong> Display or present processed data from the computer. Common examples are <strong class="text-blue-600">monitors</strong> (visual display), <strong class="text-blue-600">printers</strong> (hard copies), and <strong class="text-blue-600">speakers</strong> (audio output).</li>
+                    <li><strong class="text-gray-800">Central Processing Unit (CPU):</strong> Often called the "brain" of the computer, the CPU performs all calculations and executes program instructions. It consists of the <strong class="text-blue-600">Arithmetic Logic Unit (ALU)</strong> for arithmetic and logical operations, and the <strong class="text-blue-600">Control Unit (CU)</strong> for managing and coordinating operations.</li>
+                    <li><strong class="text-gray-800">Memory:</strong>
+                        <ul class="list-circle list-inside ml-4">
+                            <li><strong class="text-blue-600">Random Access Memory (RAM):</strong> Volatile memory used for temporary storage of data and programs currently being used. Data is lost when the power is off.</li>
+                            <li><strong class="text-blue-600">Read-Only Memory (ROM):</strong> Non-volatile memory that stores essential boot-up instructions. Data persists even when power is off.</li>
+                            <li><strong class="text-blue-600">Cache Memory:</strong> A small, very fast memory that stores frequently accessed data for quicker retrieval by the CPU.</li>
+                        </ul>
+                    </li>
+                    <li><strong class="text-gray-800">Storage Devices:</strong> Used for long-term storage of data and programs.
+                        <ul class="list-circle list-inside ml-4">
+                            <li><strong class="text-blue-600">Hard Disk Drives (HDD):</strong> Traditional magnetic storage, slower but generally cheaper and with higher capacity.</li>
+                            <li><strong class="text-blue-600">Solid State Drives (SSD):</strong> Newer, faster storage that uses flash memory, more durable but typically more expensive.</li>
+                            <li><strong class="text-blue-600">USB Drives (Flash Drives):</strong> Portable, small storage devices.</li>
+                            <li><strong class="text-blue-600">Cloud Storage:</strong> Data stored on remote servers and accessed over the internet (e.g., Google Drive, Dropbox).</li>
+                        </ul>
+                    </li>
+                </ul>
+                <img src="https://placehold.co/600x300/d7e3f7/1e3a8a?text=Computer+Hardware+Components" alt="Image showing various computer hardware components" class="content-image" onerror="this.onerror=null;this.src='https://placehold.co/600x300/cccccc/333333?text=Image+Not+Found';">
+            </div>
+
+            <!-- Topic 1.3: Computer Software -->
+            <div class="mb-8">
+                <h4 class="topic-heading">Topic 1.3: Computer Software</h4>
+                <p class="text-base leading-relaxed mb-4">
+                    <strong class="text-blue-600">Software</strong> is a set of instructions, data, or programs used to operate computers and execute specific tasks. It's the intangible part of the computer.
+                </p>
+                <ul class="list-disc list-inside ml-4 space-y-2 text-sm md:text-base mb-4">
+                    <li><strong class="text-gray-800">System Software:</strong> Designed to operate the computer hardware and to provide a platform for running application software.
+                        <ul class="list-circle list-inside ml-4">
+                            <li><strong class="text-blue-600">Operating Systems (OS):</strong> The most crucial system software, managing computer hardware and software resources (e.g., Windows, macOS, Linux, Android, iOS).</li>
+                            <li><strong class="text-blue-600">Utility Programs:</strong> Assist in maintaining and optimizing computer performance (e.g., antivirus software, disk cleanup tools).</li>
+                            <li><strong class="text-blue-600">Device Drivers:</strong> Software that enables communication between the operating system and hardware devices.</li>
+                        </ul>
+                    </li>
+                    <li><strong class="text-gray-800">Application Software:</strong> Designed to perform specific tasks for the user. Examples include word processors (Microsoft Word), spreadsheets (Excel), database management systems (SQL Server), and specialized software like <strong class="text-blue-600">aviation-specific software</strong> (e.g., flight simulators, air traffic control software, aircraft maintenance systems).</li>
+                </ul>
+                <img src="https://placehold.co/600x300/b3e0ff/1e3a8a?text=System+vs+Application+Software" alt="Image illustrating system and application software" class="content-image" onerror="this.onerror=null;this.src='https://placehold.co/600x300/cccccc/333333?text=Image+Not+Found';">
+            </div>
+
+            <!-- Topic 1.4: Operating Systems -->
+            <div class="mb-8">
+                <h4 class="topic-heading">Topic 1.4: Operating Systems</h4>
+                <p class="text-base leading-relaxed mb-4">
+                    An <strong class="text-blue-600">Operating System (OS)</strong> is the software that manages computer hardware and software resources and provides common services for computer programs. It acts as an intermediary between the user and the computer hardware.
+                </p>
+                <p class="text-base leading-relaxed mb-2">Key functions of an OS include:</p>
+                <ul class="list-disc list-inside ml-4 space-y-2 text-sm md:text-base mb-4">
+                    <li><strong class="text-gray-800">Memory Management:</strong> Allocating and deallocating memory space for programs.</li>
+                    <li><strong class="text-gray-800">Process Management:</strong> Managing the execution of multiple programs (processes).</li>
+                    <li><strong class="text-gray-800">File Management:</strong> Organizing, storing, retrieving, and deleting files and folders.</li>
+                    <li><strong class="text-gray-800">Device Management:</strong> Managing input/output devices.</li>
+                    <li><strong class="text-gray-800">Security:</strong> Protecting system resources and user data.</li>
+                </ul>
+                <p class="text-base leading-relaxed mb-2">Common types of OS:</p>
+                <ul class="list-disc list-inside ml-4 space-y-2 text-sm md:text-base mb-4">
+                    <li><strong class="text-gray-800">Microsoft Windows:</strong> The most widely used desktop OS.</li>
+                    <li><strong class="text-gray-800">macOS:</strong> Apple's operating system for its Macintosh computers.</li>
+                    <li><strong class="text-gray-800">Linux:</strong> An open-source, highly customizable OS, popular in servers and embedded systems.</li>
+                    <li><strong class="text-gray-800">Mobile OS:</strong> Operating systems for smartphones and tablets, such as Android and iOS.</li>
+                </ul>
+                <img src="https://placehold.co/600x300/a3c1ed/1e3a8a?text=Operating+Systems" alt="Image showing various operating system logos" class="content-image" onerror="this.onerror=null;this.src='https://placehold.co/600x300/cccccc/333333?text=Image+Not+Found';">
+                <p class="text-base leading-relaxed mt-4">
+                    Students will learn basic OS commands for file and folder creation, deletion, copying, and moving, which are fundamental for managing programming projects.
+                </p>
+            </div>
+
+            <!-- Topic 1.5: Computer Networks and Internet -->
+            <div class="mb-8">
+                <h4 class="topic-heading">Topic 1.5: Computer Networks and Internet</h4>
+                <p class="text-base leading-relaxed mb-4">
+                    A <strong class="text-blue-600">computer network</strong> is a group of interconnected computers and devices that can share resources and data. Understanding networks is vital in air transportation, where real-time data exchange is critical.
+                </p>
+                <ul class="list-disc list-inside ml-4 space-y-2 text-sm md:text-base mb-4">
+                    <li><strong class="text-gray-800">Network Topologies:</strong> The physical or logical arrangement of connected devices.
+                        <ul class="list-circle list-inside ml-4">
+                            <li><strong class="text-blue-600">Local Area Network (LAN):</strong> Connects devices within a limited area, like a building or campus (e.g., PhilSCA computer lab network).</li>
+                            <li><strong class="text-blue-600">Wide Area Network (WAN):</strong> Connects devices over a large geographical area, often using telecommunication lines (e.g., connecting PhilSCA to other institutions or global airline networks).</li>
+                        </ul>
+                    </li>
+                    <li><strong class="text-gray-800">Network Devices:</strong> Hardware components that facilitate network communication.
+                        <ul class="list-circle list-inside ml-4">
+                            <li><strong class="text-blue-600">Routers:</strong> Direct data packets between different networks.</li>
+                            <li><strong class="text-blue-600">Switches:</strong> Connect devices within a single network segment.</li>
+                            <li><strong class="text-blue-600">Hubs:</strong> Basic devices that connect multiple Ethernet devices together.</li>
+                        </ul>
+                    </li>
+                    <li><strong class="text-gray-800">Protocols:</strong> Sets of rules that govern how data is transmitted over a network.
+                        <ul class="list-circle list-inside ml-4">
+                            <li><strong class="text-blue-600">TCP/IP (Transmission Control Protocol/Internet Protocol):</strong> The foundational protocol suite for the internet.</li>
+                            <li><strong class="text-blue-600">HTTP (Hypertext Transfer Protocol):</strong> Used for transferring web pages.</li>
+                            <li><strong class="text-blue-600">FTP (File Transfer Protocol):</strong> Used for transferring files between computers.</li>
+                        </ul>
+                    </li>
+                    <li><strong class="text-gray-800">Introduction to the Internet:</strong> A global network of interconnected computer networks that uses TCP/IP to serve billions of users worldwide. It enables services like email, web browsing, and online communication.</li>
+                </ul>
+                <img src="https://placehold.co/600x300/9fc5e8/1e3a8a?text=Computer+Network+Diagram" alt="Image depicting a computer network" class="content-image" onerror="this.onerror=null;this.src='https://placehold.co/600x300/cccccc/333333?text=Image+Not+Found';">
+
+                <h5 class="sub-heading text-xl md:text-2xl mt-6">Relevance in Air Traffic Management (ATM) and airline operations:</h5>
+                <ul class="list-disc list-inside ml-4 space-y-2 text-sm md:text-base">
+                    <li><strong class="text-gray-800">Air Traffic Control (ATC):</strong> Relies heavily on robust networks for radar data, flight plan information, and communication between controllers and pilots.</li>
+                    <li><strong class="text-gray-800">Airline Reservation Systems:</strong> Global networks allow passengers to book flights, manage reservations, and check-in from anywhere.</li>
+                    <li><strong class="text-gray-800">Flight Planning and Operations:</strong> Pilots and dispatchers use networked systems to access weather data, NOTAMs (Notices to Airmen), flight plans, and operational updates.</li>
+                    <li><strong class="text-gray-800">Aircraft Communications:</strong> ACARS (Aircraft Communications Addressing and Reporting System) uses data links for communication between aircraft and ground stations.</li>
+                    <li><strong class="text-gray-800">Maintenance and Logistics:</strong> Networked systems track aircraft parts, maintenance schedules, and supply chains.</li>
+                </ul>
+                <img src="https://placehold.co/600x300/c9e2f5/1e3a8a?text=Aviation+Technology" alt="Image showing aviation technology and networks" class="content-image" onerror="this.onerror=null;this.src='https://placehold.co/600x300/cccccc/333333?text=Image+Not+Found';">
+            </div>
+        </section>
+
+        <!-- Module 1: Laboratory Activity -->
+        <section class="section-card">
+            <h3 class="section-heading">Module 1: Laboratory Activity</h3>
+            <h4 class="sub-heading">Laboratory Activity 1: Exploring Your Operating System and Network Basics</h4>
+
+            <p class="text-base leading-relaxed mb-4">
+                <strong class="text-blue-600">Objective:</strong> To familiarize students with their computer's operating system environment, basic file management, and fundamental network configurations.
+            </p>
+
+            <p class="text-base leading-relaxed mb-4">
+                <strong class="text-blue-600">Materials:</strong>
+            </p>
+            <ul class="list-disc list-inside ml-4 space-y-1 text-sm md:text-base mb-4">
+                <li>A computer with a working operating system (Windows, macOS, or Linux).</li>
+                <li>Internet access.</li>
+            </ul>
+
+            <h5 class="sub-heading text-xl md:text-2xl mt-6">Instructions:</h5>
+
+            <div class="lab-instruction-item">
+                <p class="text-base"><strong class="text-blue-700">1. System Information (15 minutes):</strong></p>
+                <ul class="list-disc list-inside ml-4 text-sm md:text-base">
+                    <li>Find and record your computer's operating system version (e.g., Windows 10, macOS Ventura, Ubuntu 22.04).</li>
+                    <li>Identify your CPU type (e.g., Intel Core i7, AMD Ryzen 5) and installed RAM (e.g., 8GB, 16GB).</li>
+                    <li>Determine the total storage capacity of your primary drive and the amount of free space.</li>
+                    <li><em>How to find:</em>
+                        <ul class="list-circle list-inside ml-4">
+                            <li><strong>Windows:</strong> Right-click "This PC" or "My Computer" &gt; "Properties" or go to Settings &gt; System &gt; About.</li>
+                            <li><strong>macOS:</strong> Click the Apple menu &gt; "About This Mac."</li>
+                            <li><strong>Linux:</strong> Open a terminal and use commands like `lsb_release -a`, `lscpu`, `free -h`, `df -h`.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="lab-instruction-item">
+                <p class="text-base"><strong class="text-blue-700">2. File Management Practice (20 minutes):</strong></p>
+                <ul class="list-disc list-inside ml-4 text-sm md:text-base">
+                    <li>Create a new folder on your Desktop named `CFPJ101_Lab1_[YourLastName]`.</li>
+                    <li>Inside this folder, create three subfolders: `Documents`, `Images`, `Temporary`.</li>
+                    <li>Create a simple text file (e.g., using Notepad on Windows, TextEdit on macOS, Gedit on Linux) named `my_info.txt` inside the `Documents` subfolder. Type your full name, student ID, and course code (CFPJ 101) into this file and save it.</li>
+                    <li>Copy `my_info.txt` from `Documents` to `Temporary`.</li>
+                    <li>Rename the `Temporary` folder to `Backup`.</li>
+                    <li>Delete the `Images` folder.</li>
+                    <li>Take a screenshot of your `CFPJ101_Lab1_[YourLastName]` folder showing its contents after these operations.</li>
+                </ul>
+            </div>
+
+            <div class="lab-instruction-item">
+                <p class="text-base"><strong class="text-blue-700">3. Network Configuration Check (25 minutes):</strong></p>
+                <ul class="list-disc list-inside ml-4 text-sm md:text-base">
+                    <li>Open your computer's network settings.</li>
+                    <li>Identify if you are connected to a Wi-Fi network or a wired (Ethernet) connection.</li>
+                    <li>Find and record your computer's <strong class="text-blue-600">IP Address</strong> (IPv4).</li>
+                    <li>Find and record your <strong class="text-blue-600">Default Gateway</strong> address.</li>
+                    <li>Find and record your <strong class="text-blue-600">DNS Server</strong> address(es).</li>
+                    <li><strong class="text-blue-600">Ping Test:</strong>
+                        <ul class="list-circle list-inside ml-4">
+                            <li>Open a Command Prompt (Windows), Terminal (macOS/Linux).</li>
+                            <li>Type `ping google.com` and press Enter.</li>
+                            <li>Record the average response time (latency).</li>
+                            <li>Explain what a "ping" command does and what the response time indicates.</li>
+                        </ul>
+                    </li>
+                    <li><em>How to find network info:</em>
+                        <ul class="list-circle list-inside ml-4">
+                            <li><strong>Windows:</strong> `ipconfig` in Command Prompt or Settings &gt; Network &amp; Internet &gt; Status &gt; View your network properties.</li>
+                            <li><strong>macOS:</strong> System Settings &gt; Network &gt; Select your active connection &gt; Details/Advanced.</li>
+                            <li><strong>Linux:</strong> `ip a` or `ifconfig` in Terminal.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="lab-instruction-item">
+                <p class="text-base"><strong class="text-blue-700">4. Internet Research (20 minutes):</strong></p>
+                <ul class="list-disc list-inside ml-4 text-sm md:text-base">
+                    <li>Using a web browser, research and find one specific example of how <strong class="text-blue-600">computer networks</strong> are critical for <strong class="text-blue-600">Air Traffic Control (ATC)</strong> operations.</li>
+                    <li>Write a short paragraph (3-5 sentences) summarizing your findings, including the source (website URL). Save this paragraph in a new text file named `ATC_Network_Research.txt` inside your `CFPJ101_Lab1_[YourLastName]` folder.</li>
+                </ul>
+            </div>
+
+            <h5 class="sub-heading text-xl md:text-2xl mt-6">Deliverables:</h5>
+            <ol class="list-decimal list-inside ml-4 space-y-2 text-sm md:text-base mb-4">
+                <li>A text file (e.g., `System_Info.txt`) containing the recorded system information (OS, CPU, RAM, Storage).</li>
+                <li>The screenshot of your `CFPJ101_Lab1_[YourLastName]` folder.</li>
+                <li>A text file (e.g., `Network_Info.txt`) containing your recorded network configuration (IP, Gateway, DNS) and the ping test results with explanation.</li>
+                <li>The `ATC_Network_Research.txt` file.</li>
+            </ol>
+
+            <p class="text-base leading-relaxed mt-4">
+                <strong class="text-blue-600">Submission:</strong> Submit all four (4) files in a single compressed `.zip` or `.rar` archive named `CFPJ101_Lab1_[YourLastName].zip` through the designated online learning platform.
+            </p>
+        </section>
+
+        <!-- Footer Section -->
+        <footer class="text-center text-sm text-gray-500 mt-10 pt-6 border-t border-gray-300">
+            <p>&copy;  2025-2026 Philippine State College of Aeronautics. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        // Intersection Observer for fade-in animation on sections
+        const sections = document.querySelectorAll('.section-card');
+
+        const observerOptions = {
+            root: null, // viewport
+            rootMargin: '0px',
+            threshold: 0.1 // 10% of the section must be visible to trigger animation
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target); // Stop observing once visible
+                }
+            });
+        }, observerOptions);
+
+        // Observe each section
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Ensure initial sections are visible if already in viewport on load
+        window.addEventListener('load', () => {
+            sections.forEach(section => {
+                if (section.getBoundingClientRect().top < window.innerHeight) {
+                    section.classList.add('is-visible');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

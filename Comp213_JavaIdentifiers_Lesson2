@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Identifiers</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        :root {
+            --primary-color: #4A90E2;
+            --secondary-color: #50E3C2;
+            --text-color: #333333;
+            --bg-color: #F8F9FA;
+            --card-bg: #FFFFFF;
+            --code-bg: #EAECEF;
+            --border-color: #E0E0E0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .code-block {
+            background-color: var(--code-bg);
+            padding: 15px;
+            border-radius: 6px;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: auto;
+            margin-top: 15px;
+        }
+
+        .code-block pre {
+            margin: 0;
+        }
+
+        .valid-list li {
+            color: green;
+        }
+
+        .invalid-list li {
+            color: red;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid var(--border-color);
+            margin-top: 20px;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Comp 213 Computer Fundamentals and Programming - Java Identifiers</h1>
+        <p>A comprehensive guide to naming conventions in Java</p>
+    </header>
+
+    <div class="card">
+        <h2>What is a Java Identifier?</h2>
+        <p>
+            In Java, an identifier is a unique name assigned to various programming elements. These include
+            variables, classes, methods, packages, and interfaces. They act as a way to identify and
+            differentiate between these components within a program.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>Rules for Naming Java Identifiers</h2>
+        <p>To be considered a valid identifier, a name must follow a specific set of rules:</p>
+        <ul>
+            <li>Allowed characters include alphanumeric characters (A-Z, a-z, 0-9), the dollar sign (<code>$</code>), and the underscore (<code>_</code>).</li>
+            <li>An identifier cannot start with a digit (0-9).</li>
+            <li>Java is a case-sensitive language, so <code>myVariable</code> and <code>MyVariable</code> are treated as different identifiers.</li>
+            <li>Reserved words (keywords and literals) cannot be used as identifiers.</li>
+            <li>There is no official length limit for an identifier, but it's generally recommended to keep them at an optimum length (e.g., 4-15 characters) for readability.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Example of Identifiers in Code</h2>
+        <p>In the following code snippet, there are five identifiers:</p>
+        <div class="code-block">
+            <pre>
+class Test {
+    public static void main(String args[]) {
+        int a = 10;
+    }
+}
+            </pre>
+        </div>
+        <ul>
+            <li><code>Test</code>: A class name</li>
+            <li><code>main</code>: A method name</li>
+            <li><code>String</code>: A predefined class name</li>
+            <li><code>args</code>: A variable name</li>
+            <li><code>a</code>: A variable name</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Valid and Invalid Identifier Examples</h2>
+        <div class="card-content">
+            <div style="display: flex; gap: 20px;">
+                <div style="flex: 1;">
+                    <h3>Valid Identifiers</h3>
+                    <ul class="valid-list">
+                        <li><code>MyVariable</code></li>
+                        <li><code>_myVariable</code></li>
+                        <li><code>$amount</code></li>
+                        <li><code>sum_of_array</code></li>
+                        <li><code>geeks123</code></li>
+                    </ul>
+                </div>
+                <div style="flex: 1;">
+                    <h3>Invalid Identifiers</h3>
+                    <ul class="invalid-list">
+                        <li><code>My Variable</code> (contains a space)</li>
+                        <li><code>123geeks</code> (starts with a digit)</li>
+                        <li><code>a+c</code> (contains an invalid character)</li>
+                        <li><code>while</code> (is a reserved keyword)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Java Reserved Words</h2>
+        <p>Java has 53 reserved words that cannot be used as identifiers. These include:</p>
+        <ul>
+            <li><strong>Keywords (50):</strong> Words that define functionalities (e.g., <code>class</code>, <code>public</code>, <code>static</code>, <code>void</code>).</li>
+            <li><strong>Literals (3):</strong> The values <code>true</code>, <code>false</code>, and <code>null</code>.</li>
+        </ul>
+    </div>
+
+</div>
+
+<footer>
+    <p>&copy; 2025 RONALD T. LAVA, MSIT | Institute of Computer Studies</p>
+</footer>
+
+</body>
+</html>

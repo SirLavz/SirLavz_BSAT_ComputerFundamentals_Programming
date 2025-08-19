@@ -1,0 +1,71 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviation Information System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #004085;
+        }
+        pre {
+            background: #e9e9e9;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #f0f0f0;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>COMP 213 - COMPUTER FUNDAMENTALS AND PROGRAMING</h1>
+        <h2>Java Aviation Information System</h2>
+
+        <h2>Problem Description</h2>
+        <p>Your task is to create a Java program that provides information on various aviation topics using a <code>switch</code> statement. The program should be interactive and guide the user through different choices to retrieve specific details.</p>
+
+        <h3>Core Requirements:</h3>
+        <ol>
+            <li><strong>User Menu:</strong> The program must first present the user with a numbered menu of aviation topics:
+                <ul>
+                    <li>1. Aircraft Type</li>
+                    <li>2. Flight Phase</li>
+                    <li>3. Airspace Class</li>
+                    <li>4. Weather Condition</li>
+                </ul>
+            </li>
+            <li><strong>Outer <code>switch</code> Statement:</strong> Use a primary <code>switch</code> statement to handle the user's initial selection.</li>
+            <li><strong>Nested <code>switch</code> Statements:</strong> Inside each case of the main <code>switch</code>, implement a nested <code>switch</code> statement to handle a second layer of user input for more detailed information.</li>
+            <li><strong>Case-Insensitive Input:</strong> The program should handle user input for the nested switch statement without being case-sensitive (e.g., "boeing" or "BOEING").</li>
+            <li><strong>Error Handling:</strong> Both the outer and inner <code>switch</code> statements must include a <code>default</code> case to handle invalid user input and display an appropriate error message.</li>
+            <li><strong>Program Flow:</strong> The program should use a <code>Scanner</code> to read all user inputs and should be clear and easy to read.</li>
+        </ol>
+
+
+        
+    </div>
+
+</body>
+</html>

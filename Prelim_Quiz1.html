@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Computer Fundamentals Quiz No.1</title>
+    <title>Computer Fundamentals Quiz</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -20,11 +20,23 @@
             padding: 20px 40px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
         }
-        h1 {
+        h1, h2 {
             text-align: center;
             color: #0056b3;
             margin-bottom: 20px;
+        }
+        .timer-container {
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #d9534f;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 2px solid #d9534f;
+            border-radius: 5px;
+            background-color: #fdd;
         }
         .question-block {
             margin-bottom: 25px;
@@ -64,300 +76,312 @@
         input[type="radio"] {
             margin-right: 10px;
         }
-        .footer {
-            text-align: center;
-            margin-top: 30px;
-            font-size: 0.9em;
-            color: #777;
+        #submit-btn {
+            display: block;
+            width: 200px;
+            padding: 10px;
+            margin: 20px auto;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
         }
+        #submit-btn:hover {
+            background-color: #0056b3;
+        }
+        #result-section {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .certificate-container {
+            display: none; /* Initially hidden */
+            border: 2px solid #0056b3;
+            padding: 40px;
+            margin-top: 40px;
+            text-align: center;
+            background: #ffffff;
+            border-radius: 10px;
+            position: relative;
+        }
+        .certificate-title {
+            font-family: 'Times New Roman', serif;
+            font-size: 2.5em;
+            color: #0056b3;
+            margin-bottom: 10px;
+        }
+        .certificate-subtitle {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        .recipient-name {
+            font-family: 'Arial Black', sans-serif;
+            font-size: 2em;
+            color: #000;
+            margin: 20px 0;
+            border-bottom: 2px solid #ccc;
+            display: inline-block;
+            padding: 0 15px;
+        }
+        .certificate-text {
+            font-size: 1.1em;
+            color: #444;
+            margin-bottom: 30px;
+        }
+        .certificate-signature {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 40px;
+        }
+        .signature-line {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 40%;
+        }
+        .signature-line span {
+            font-weight: bold;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #000;
+        }
+        .signature-line small {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+        #download-cert-btn {
+            display: none;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 <body>
 
 <div class="container">
-    <h1>Computer Fundamentals Quiz No. 1</h1>
-    <p>Comp 213 - Computer Fundamentals and Programming</p>
-
-    <div class="question-block">
-        <div class="question-number">Question 1</div>
-        <div class="question-text">Which of the following is considered the first electronic digital computer?</div>
-        <ul class="options">
-            <li><label><input type="radio" name="q1" value="a"> ABC (Atanasoff-Berry Computer)</label></li>
-            <li><label><input type="radio" name="q1" value="b"> ENIAC (Electronic Numerical Integrator and Computer)</label></li>
-            <li><label><input type="radio" name="q1" value="c"> UNIVAC (Universal Automatic Computer)</label></li>
-            <li><label><input type="radio" name="q1" value="d"> Z1</label></li>
-        </ul>
-    </div>
-
-    <div class="question-block">
-        <div class="question-number">Question 2</div>
-        <div class="question-text">Who is known as the 'Father of the Computer' for his work on the Analytical Engine?</div>
-        <ul class="options">
-            <li><label><input type="radio" name="q2" value="a"> Alan Turing</label></li>
-            <li><label><input type="radio" name="q2" value="b"> Konrad Zuse</label></li>
-            <li><label><input type="radio" name="q2" value="c"> Charles Babbage</label></li>
-            <li><label><input type="radio" name="q2" value="d"> John von Neumann</label></li>
-        </ul>
-    </div>
-
-    <div class="question-block">
-        <div class="question-number">Question 3</div>
-        <div class="question-text">Which component is often referred to as the 'brain' of the computer?</div>
-        <ul class="options">
-            <li><label><input type="radio" name="q3" value="a"> RAM</label></li>
-            <li><label><input type="radio" name="q3" value="b"> Hard Disk Drive (HDD)</label></li>
-            <li><label><input type="radio" name="q3" value="c"> Central Processing Unit (CPU)</label></li>
-            <li><label><input type="radio" name="q3" value="d"> Motherboard</label></li>
-        </ul>
-    </div>
-
-    <div class="question-block">
-        <div class="question-number">Question 4</div>
-        <div class="question-text">Which of the following is a type of primary memory that is volatile?</div>
-        <ul class="options">
-            <li><label><input type="radio" name="q4" value="a"> ROM (Read-Only Memory)</label></li>
-            <li><label><input type="radio" name="q4" value="b"> Flash Memory</label></li>
-            <li><label><input type="radio" name="q4" value="c"> Hard Disk Drive (HDD)</label></li>
-            <li><label><input type="radio" name="q4" value="d"> RAM (Random Access Memory)</label></li>
-        </ul>
-    </div>
-
-    <div class="question-block">
-        <div class="question-number">Question 5</div>
-        <div class="question-text">What is the main function of an operating system (OS)?</div>
-        <ul class="options">
-            <li><label><input type="radio" name="q5" value="a"> To provide internet access</label></li>
-            <li><label><input type="radio" name="q5" value="b"> To manage computer hardware and software resources</label></li>
-            <li><label><input type="radio" name="q5" value="c"> To create and edit documents</label></li>
-            <li><label><input type="radio" name="q5" value="d"> To play video games</label></li>
-        </ul>
-    </div>
-
-    <div class="question-block">
-        <div class="question-number">Question 6</div>
-        <div class="question-text">Which of the following is an example of application software?</div>
-        <ul class="options">
-            <li><label><input type="radio" name="q6" value="a"> Microsoft Windows</label></li>
-            <li><label><input type="radio" name="q6" value="b"> Linux</label></li>
-            <li><label><input type="radio" name="q6" value="c"> Adobe Photoshop</label></li>
-            <li><label><input type="radio" name="q6" value="d"> BIOS</label></li>
-        </ul>
-    </div>
-
-    <div class="question-block">
-        <div class="question-number">Question 7</div>
-        <div class="question-text">What is the function of the motherboard?</div>
-        <ul class="options">
-            <li><label><input type="radio" name="q7" value="a"> To store all the computer's data long-term</label></li>
-            <li><label><input type="radio" name="q7" value="b"> To process all the data and instructions</label></li>
-            <li><label><input type="radio" name="q7" value="c"> To connect all the computer's components and allow them to communicate</label></li>
-            <li><label><input type="radio" name="q7" value="d"> To display images on the monitor</label></li>
-        </ul>
-    </div>
-
-    <div class="question-block">
-        <div class="question-number">Question 8</div>
-        <div class="question-text">Which of these is a type of input device?</div>
-        <ul class="options">
-            <li><label><input type="radio" name="q8" value="a"> Printer</label></li>
-            <li><label><input type="radio" name="q8" value="b"> Speaker</label></li>
-            <li><label><input type="radio" name="q8" value="c"> Mouse</label></li>
-            <li><label><input type="radio" name="q8" value="d"> Monitor</label></li>
-        </ul>
-    </div>
-
-    <div class="question-block">
-        <div class="question-number">Question 9</div>
-        <div class="question-text">The term 'hardware' refers to:</div>
-        <ul class="options">
-            <li><label><input type="radio" name="q9" value="a"> The programs and applications that run on the computer</label></li>
-            <li><label><input type="radio" name="q9" value="b"> The physical, tangible components of a computer system</label></li>
-            <li><label><input type="radio" name="q9" value="c"> The instructions that tell the computer what to do</label></li>
-            <li><label><input type="radio" name="q9" value="d"> The data stored on the hard drive</label></li>
-        </ul>
-    </div>
-
-    <div class="question-block">
-        <div class="question-number">Question 10</div>
-        <div class="question-text">What is a 'gigabyte' (GB)?</div>
-        <ul class="options">
-            <li><label><input type="radio" name="q10" value="a"> A unit of processing speed</label></li>
-            <li><label><input type="radio" name="q10" value="b"> A unit of data storage capacity</label></li>
-            <li><label><input type="radio" name="q10" value="c"> A type of computer port</label></li>
-            <li><label><input type="radio" name="q10" value="d"> A type of computer monitor</label></li>
-        </ul>
-    </div>
+    <h1>Computer Fundamentals Quiz 1</h1>
+    <div class="timer-container">Time Left: <span id="timer">15:00</span></div>
+    <p>Comp 213  - Computer Fundamentals and Programming</p>
     
-    <div class="question-block">
-        <div class="question-number">Question 11</div>
-        <div class="question-text">What is the purpose of a computer's power supply unit (PSU)?</div>
-        <ul class="options">
-            <li><label><input type="radio" name="q11" value="a"> To process all the data and instructions</label></li>
-            <li><label><input type="radio" name="q11" value="b"> To convert AC power from the wall outlet into DC power for the computer components</label></li>
-            <li><label><input type="radio" name="q11" value="c"> To display images on the monitor</label></li>
-            <li><label><input type="radio" name="q11" value="d"> To store data permanently</label></li>
-        </ul>
-    </div>
-
-    <div class="question-block">
-        <div class="question-number">Question 12</div>
-        <div class="question-text">Which of the following describes 'System Software'?</div>
-        <ul class="options">
-            <li><label><input type="radio" name="q12" value="a"> Programs that perform specific tasks for the user, like a web browser.</label></li>
-            <li><label><input type="radio" name="q12" value="b"> The physical components of the computer.</label></li>
-            <li><label><input type="radio" name="q12" value="c"> The software that manages and controls the computer's hardware and provides a platform for application software to run.</label></li>
-            <li><label><input type="radio" name="q12" value="d"> Files and documents created by the user.</label></li>
-        </ul>
-    </div>
-
-    <div class="question-block">
-        <div class="question-number">Question 13</div>
-        <div class="question-text">What is the purpose of a Graphics Processing Unit (GPU)?</div>
-        <ul class="options">
-            <li><label><input type="radio" name="q13" value="a"> To provide internet connectivity</label></li>
-            <li><label><input type="radio" name="q13" value="b"> To perform complex calculations for displaying images and videos</label></li>
-            <li><label><input type="radio" name="q13" value="c"> To store the computer's operating system</label></li>
-            <li><label><input type="radio" name="q13" value="d"> To run the computer's startup program</label></li>
-        </ul>
-    </div>
-
-    <div class="question-block">
-        <div class="question-number">Question 14</div>
-        <div class="question-text">Which generation of computers introduced the microprocessor?</div>
-        <ul class="options">
-            <li><label><input type="radio" name="q14" value="a"> First Generation</label></li>
-            <li><label><input type="radio" name="q14" value="b"> Second Generation</label></li>
-            <li><label><input type="radio" name="q14" value="c"> Third Generation</label></li>
-            <li><label><input type="radio" name="q14" value="d"> Fourth Generation</label></li>
-        </ul>
-    </div>
-
-    <div class="question-block">
-        <div class="question-number">Question 15</div>
-        <div class="question-text">What is the primary function of a hard disk drive (HDD) or Solid-State Drive (SSD)?</div>
-        <ul class="options">
-            <li><label><input type="radio" name="q15" value="a"> To temporarily hold data for the CPU</label></li>
-            <li><label><input type="radio" name="q15" value="b"> To provide power to the computer</label></li>
-            <li><label><input type="radio" name="q15" value="c"> To provide permanent storage for data and files</label></li>
-            <li><label><input type="radio" name="q15" value="d"> To execute instructions and perform calculations</label></li>
-        </ul>
-    </div>
-
-    <div class="question-block">
-        <div class="question-number">Question 16</div>
-        <div class="question-text">Which of these is not a characteristic of a computer?</div>
-        <ul class="options">
-            <li><label><input type="radio" name="q16" value="a"> Speed</label></li>
-            <li><label><input type="radio" name="q16" value="b"> Accuracy</label></li>
-            <li><label><input type="radio" name="q16" value="c"> Creativity</label></li>
-            <li><label><input type="radio" name="q16" value="d"> Diligence</label></li>
-        </ul>
-    </div>
-
-    <div class="question-block">
-        <div class="question-number">Question 17</div>
-        <div class="question-text">What is the primary purpose of a computer's bus?</div>
-        <ul class="options">
-            <li><label><input type="radio" name="q17" value="a"> To provide power to the components</label></li>
-            <li><label><input type="radio" name="q17" value="b"> To act as a communication system for transferring data between components</label></li>
-            <li><label><input type="radio" name="q17" value="c"> To cool the CPU</label></li>
-            <li><label><input type="radio" name="q17" value="d"> To store short-term data</label></li>
-        </ul>
-    </div>
-
-    <div class="question-block">
-        <div class="question-number">Question 18</div>
-        <div class="question-text">Which of these is an example of system software?</div>
-        <ul class="options">
-            <li><label><input type="radio" name="q18" value="a"> Microsoft Word</label></li>
-            <li><label><input type="radio" name="q18" value="b"> An antivirus program</label></li>
-            <li><label><input type="radio" name="q18" value="c"> Google Chrome</label></li>
-            <li><label><input type="radio" name="q18" value="d"> A video game</label></li>
-        </ul>
-    </div>
-
-    <div class="question-block">
-        <div class="question-number">Question 19</div>
-        <div class="question-text">What does the acronym 'RAM' stand for?</div>
-        <ul class="options">
-            <li><label><input type="radio" name="q19" value="a"> Read-Access Memory</label></li>
-            <li><label><input type="radio" name="q19" value="b"> Rapid Access Method</label></li>
-            <li><label><input type="radio" name="q19" value="c"> Random Access Memory</label></li>
-            <li><label><input type="radio" name="q19" value="d"> Removable Auxiliary Memory</label></li>
-        </ul>
-    </div>
-
-    <div class="question-block">
-        <div class="question-number">Question 20</div>
-        <div class="question-text">What is the purpose of an instruction set in a CPU?</div>
-        <ul class="options">
-            <li><label><input type="radio" name="q20" value="a"> To manage the computer's network connection</label></li>
-            <li><label><input type="radio" name="q20" value="b"> To define the basic operations that a CPU can perform</label></li>
-            <li><label><input type="radio" name="q20" value="c"> To provide a user interface</label></li>
-            <li><label><input type="radio" name="q20" value="d"> To cool the CPU during operation</label></li>
-        </ul>
-    </div>
-
-    <div class="question-block">
-        <div class="question-number">Question 21</div>
-        <div class="question-text">What is a 'port' in the context of computer hardware?</div>
-        <ul class="options">
-            <li><label><input type="radio" name="q21" value="a"> A type of software that manages files</label></li>
-            <li><label><input type="radio" name="q21" value="b"> A physical connection point on a computer for an external device</label></li>
-            <li><label><input type="radio" name="q21" value="c"> A logical address used for networking</label></li>
-            <li><label><input type="radio" name="q21" value="d"> A type of memory used for caching</label></li>
-        </ul>
-    </div>
-
-    <div class="question-block">
-        <div class="question-number">Question 22</div>
-        <div class="question-text">Which of these is an example of an output device?</div>
-        <ul class="options">
-            <li><label><input type="radio" name="q22" value="a"> Keyboard</label></li>
-            <li><label><input type="radio" name="q22" value="b"> Scanner</label></li>
-            <li><label><input type="radio" name="q22" value="c"> Webcam</label></li>
-            <li><label><input type="radio" name="q22" value="d"> Speaker</label></li>
-        </ul>
-    </div>
-
-    <div class="question-block">
-        <div class="question-number">Question 23</div>
-        <div class="question-text">What is the primary role of a computer's 'cache' memory?</div>
-        <ul class="options">
-            <li><label><input type="radio" name="q23" value="a"> To store the computer's BIOS</label></li>
-            <li><label><input type="radio" name="q23" value="b"> To provide long-term storage for user files</label></li>
-            <li><label><input type="radio" name="q23" value="c"> To temporarily hold frequently accessed data for faster retrieval by the CPU</label></li>
-            <li><label><input type="radio" name="q23" value="d"> To cool the CPU</label></li>
-        </ul>
-    </div>
-
-    <div class="question-block">
-        <div class="question-number">Question 24</div>
-        <div class="question-text">What is the function of the BIOS (Basic Input/Output System)?</div>
-        <ul class="options">
-            <li><label><input type="radio" name="q24" value="a"> To manage all the computer's processes and files</label></li>
-            <li><label><input type="radio" name="q24" value="b"> To control the communication between the CPU and the hard drive</label></li>
-            <li><label><input type="radio" name="q24" value="c"> To perform the initial startup procedures and load the operating system</label></li>
-            <li><label><input type="radio" name="q24" value="d"> To provide a user-friendly graphical interface</label></li>
-        </ul>
-    </div>
-
-    <div class="question-block">
-        <div class="question-number">Question 25</div>
-        <div class="question-text">What is the main difference between software and hardware?</div>
-        <ul class="options">
-            <li><label><input type="radio" name="q25" value="a"> Hardware is for gaming, and software is for work.</label></li>
-            <li><label><input type="radio" name="q25" value="b"> Hardware is the physical components of a computer, while software is the set of instructions and data.</label></li>
-            <li><label><input type="radio" name="q25" value="c"> Software is required for the internet, and hardware is not.</label></li>
-            <li><label><input type="radio" name="q25" value="d"> Hardware is always more expensive than software.</label></li>
-        </ul>
-    </div>
+    <form id="quiz-form">
+        <div id="quiz-container"></div>
+        <button type="submit" id="submit-btn">Submit Quiz</button>
+    </form>
     
-    <div class="footer">
-        &copy; SirLavz2025 | RONALD T. LAVA, MSIT | INSTITUTE OF COMPUTER STUDIES | PHILSCA .
-    </div>
-
+    <div id="result-section"></div>
+    <button id="download-cert-btn">Download Certificate</button>
 </div>
+
+<div class="certificate-container" id="certificate">
+    <div class="certificate-title">Certificate of Completion</div>
+    <div class="certificate-subtitle">This certifies that</div>
+    <div class="recipient-name" id="student-name"></div>
+    <div class="certificate-text">has successfully completed the course in</div>
+    <div class="recipient-name">Computer Fundamentals</div>
+    <div class="certificate-text">
+        <p>with a score of <span id="final-score"></span>%</p>
+        <p>on this day of <span id="certificate-date"></span></p>
+        <p>Course: <span id="course-name"></span> | Year: <span id="year-level"></span> | Section: <span id="section-name"></span></p>
+    </div>
+    <div class="certificate-signature">
+        <div class="signature-line">
+            <span>RONALD T. LAVA, MSIT</span>
+            <small>Instructor Signature</small>
+        </div>
+        <div class="signature-line">
+            <span id="date-issued"></span>
+            <small>Date Issued</small>
+        </div>
+    </div>
+</div>
+
+<script>
+    const quizData = {
+        "Qn":[{"sua":0,"question":"Which of the following is considered the first electronic digital computer?","hint":"The name of this computer is an acronym for 'Electronic Numerical Intregator and Computer'.","gF":[{"text":"ABC (Atanasoff-Berry Computer)","qt":false,"ulb":"While the Atanasoff-Berry Computer was an early electronic digital computer, it was not fully programmable and its significance was debated. The ENIAC is more widely recognized as the first."},{"text":"ENIAC (Electronic Numerical Intregator and Computer)","qt":true,"ulb":"The ENIAC is widely regarded as the first fully functional electronic digital computer, used for calculating artillery firing tables for the U.S. Army."},{"text":"UNIVAC (Universal Automatic Computer)","qt":false,"ulb":"The UNIVAC was a significant early commercial computer, but it came after the ENIAC."},{"text":"Z1","qt":false,"ulb":"The Z1 was a mechanical computer created by Konrad Zuse, not an electronic one."}]},{"sua":0,"question":"Who is known as the 'Father of the Computer' for his work on the Analytical Engine?","hint":"Think about the inventor of the early mechanical 'difference engine' and 'analytical engine'.","gF":[{"text":"Alan Turing","qt":false,"ulb":"Alan Turing was a groundbreaking mathematician and computer scientist, but Charles Babbage is credited with the concept of the first mechanical computer."},{"text":"Konrad Zuse","qt":false,"ulb":"Konrad Zuse created the Z1, an early programmable mechanical computer, but Babbage's work predates his."},{"text":"Charles Babbage","qt":true,"ulb":"Charles Babbage is considered the 'Father of the Computer' for his invention of the Analytical Engine, a machine that laid the groundwork for modern computers."},{"text":"John von Neumann","qt":false,"ulb":"John von Neumann was a key figure in the development of the stored-program computer architecture, which is a fundamental concept today."}]},{"sua":0,"question":"Which component is often referred to as the 'brain' of the computer?","hint":"This component fetches instructions and performs calculations.","gF":[{"text":"RAM","qt":false,"ulb":"RAM (Random Access Memory) is for short-term data storage, not for processing instructions."},{"text":"Hard Disk Drive (HDD)","qt":false,"ulb":"An HDD is a long-term storage device, not a processing unit."},{"text":"Central Processing Unit (CPU)","qt":true,"ulb":"The CPU is responsible for executing instructions and processing data, making it the core 'brain' of the computer."},{"text":"Motherboard","qt":false,"ulb":"The motherboard is the main circuit board that connects all the components, but it doesn't perform the processing itself."}]},{"sua":0,"question":"Which of the following is a type of primary memory that is volatile?","hint":"This memory is used by the CPU to store data that it's actively working on.","gF":[{"text":"ROM (Read-Only Memory)","qt":false,"ulb":"ROM is non-volatile, meaning it retains its data even when the power is turned off."},{"text":"Flash Memory","qt":false,"ulb":"Flash memory is a type of non-volatile storage, commonly used in SSDs and USB drives."},{"text":"Hard Disk Drive (HDD)","qt":false,"ulb":"An HDD is a secondary storage device and is non-volatile."},{"text":"RAM (Random Access Memory)","qt":true,"ulb":"RAM is volatile memory; its data is lost when the computer's power is turned off."}]},{"sua":0,"question":"What is the main function of an operating system (OS)?","hint":"Think of it as the core program that allows you to interact with your computer's components.","gF":[{"text":"To provide internet access","qt":false,"ulb":"While an OS enables internet access, this is not its primary function. Networking software and hardware handle the connection."},{"text":"To manage computer hardware and software resources","qt":true,"ulb":"The primary function of an operating system is to act as an interface between the user/applications and the computer's hardware, managing resources like memory, processes, and files."},{"text":"To create and edit documents","qt":false,"ulb":"This is a function of application software, such as a word processor, not the operating system itself."},{"text":"To play video games","qt":false,"ulb":"Playing video games requires application software and graphics hardware; the OS only provides the environment for them to run."}]},{"sua":0,"question":"Which of the following is an example of application software?","hint":"This software is for end-users to perform a specific task, such as editing a photo or writing a document.","gF":[{"text":"Microsoft Windows","qt":false,"ulb":"Microsoft Windows is an operating system, which is a type of system software."},{"text":"Linux","qt":false,"ulb":"Linux is a type of operating system and is therefore system software."},{"text":"Adobe Photoshop","qt":true,"ulb":"Adobe Photoshop is a program designed to perform a specific task (image editing) for the user, making it application software."},{"text":"BIOS","qt":false,"ulb":"BIOS (Basic Input/Output System) is a type of system software that helps start up the computer."}]},{"sua":0,"question":"What is the function of the motherboard?","hint":"Think of it as the main 'highway' for data inside the computer.","gF":[{"text":"To store all the computer's data long-term","qt":false,"ulb":"This is the function of secondary storage devices, like hard drives or SSDs."},{"text":"To process all the data and instructions","qt":false,"ulb":"This is the function of the Central Processing Unit (CPU)."},{"text":"To connect all the computer's components and allow them to communicate","qt":true,"ulb":"The motherboard is the central circuit board that provides communication pathways for all the computer's components."},{"text":"To display images on the monitor","qt":false,"ulb":"This is the function of the Graphics Processing Unit (GPU) and the display itself."}]},{"sua":0,"question":"Which of these is a type of input device?","hint":"An input device sends data or instructions to the computer for processing.","gF":[{"text":"Printer","qt":false,"ulb":"A printer is an output device that produces a hard copy of data."},{"text":"Speaker","qt":false,"ulb":"A speaker is an output device that produces audio."},{"text":"Mouse","qt":true,"ulb":"A mouse is an input device used to control the cursor and interact with the graphical user interface."},{"text":"Monitor","qt":false,"ulb":"A monitor is an output device that displays information visually."}]},{"sua":0,"question":"The term 'hardware' refers to:","hint":"Think about the parts of a computer you can physically handle.","gF":[{"text":"The programs and applications that run on the computer","qt":false,"ulb":"This definition refers to software, not hardware."},{"text":"The physical, tangible components of a computer system","qt":true,"ulb":"Hardware includes all the physical parts of a computer that you can touch, such as the CPU, mouse, and keyboard."},{"text":"The instructions that tell the computer what to do","qt":false,"ulb":"This is the definition of a program or software."},{"text":"The data stored on the hard drive","qt":false,"ulb":"Data is the information processed by the computer; it is not the hardware itself."}]},{"sua":0,"question":"What is a 'gigabyte' (GB)?","hint":"This unit is often used to describe the size of a hard drive or the amount of RAM in a computer.","gF":[{"text":"A unit of processing speed","qt":false,"ulb":"Processing speed is measured in Hertz (Hz), not gigabytes."},{"text":"A unit of data storage capacity","qt":true,"ulb":"A gigabyte is a common unit used to measure the size of computer files and storage devices."},{"text":"A type of computer port","qt":false,"ulb":"A port is a connection point for devices; it is not a unit of measurement."},{"text":"A type of computer monitor","qt":false,"ulb":"A gigabyte is not a type of monitor."}]},{"sua":0,"question":"What is the purpose of a computer's power supply unit (PSU)?","hint":"It handles the electrical power for the entire system.","gF":[{"text":"To process all the data and instructions","qt":false,"ulb":"This is the job of the CPU."},{"text":"To convert AC power from the wall outlet into DC power for the computer components","qt":true,"ulb":"The PSU's main function is to transform the incoming high-voltage AC power from the wall into the stable, low-voltage DC power that the internal components of a computer require to operate safely."},{"text":"To display images on the monitor","qt":false,"ulb":"This is the role of a graphics card and the monitor."},{"text":"To store data permanently","qt":false,"ulb":"This is the role of a hard drive or SSD."}]},{"sua":0,"question":"Which of the following describes 'System Software'?","hint":"Think of the software that is essential for the computer to even function.","gF":[{"text":"Programs that perform specific tasks for the user, like a web browser.","qt":false,"ulb":"This describes application software, which is used for specific user-oriented tasks."},{"text":"The physical components of the computer.","qt":false,"ulb":"This is the definition of hardware."},{"text":"The software that manages and controls the computer's hardware and provides a platform for application software to run.","qt":true,"ulb":"System software, such as the operating system, acts as an intermediary, managing the hardware and providing a stable environment for other programs."},{"text":"Files and documents created by the user.","qt":false,"ulb":"These are considered data, not a type of software."}]},{"sua":0,"question":"What is the purpose of a Graphics Processing Unit (GPU)?","hint":"This component is especially important for gaming and video editing.","gF":[{"text":"To provide internet connectivity","qt":false,"ulb":"Internet connectivity is handled by a Network Interface Card (NIC)."},{"text":"To perform complex calculations for displaying images and videos","qt":true,"ulb":"A GPU is a specialized processor designed for rapid manipulation of memory to accelerate the creation of images, video, and animations."},{"text":"To store the computer's operating system","qt":false,"ulb":"The operating system is stored on a hard drive or SSD."},{"text":"To run the computer's startup program","qt":false,"ulb":"The BIOS or UEFI firmware runs the startup program."}]},{"sua":0,"question":"Which generation of computers introduced the microprocessor?","hint":"This generation is known for the creation of the personal computer (PC).","gF":[{"text":"First Generation","qt":false,"ulb":"First generation computers used vacuum tubes."},{"text":"Second Generation","qt":false,"ulb":"Second generation computers used transistors."},{"text":"Third Generation","qt":false,"ulb":"Third generation computers used integrated circuits, which paved the way for microprocessors, but the microprocessor itself was a hallmark of the fourth generation."},{"text":"Fourth Generation","qt":true,"ulb":"The fourth generation of computers is defined by the invention of the microprocessor, which miniaturized the CPU and led to the personal computer revolution."}]},{"sua":0,"question":"What is the primary function of a hard disk drive (HDD) or Solid-State Drive (SSD)?","hint":"This is where your files, documents, and programs are saved when the computer is turned off.","gF":[{"text":"To temporarily hold data for the CPU","qt":false,"ulb":"This is the function of RAM (Random Access Memory)."},{"text":"To provide power to the computer","qt":false,"ulb":"This is the function of the Power Supply Unit (PSU)."},{"text":"To provide permanent storage for data and files","qt":true,"ulb":"Both HDDs and SSDs are types of secondary storage, used to permanently store the operating system, applications, and user files."},{"text":"To execute instructions and perform calculations","qt":false,"ulb":"This is the function of the CPU."}]},{"sua":0,"question":"Which of these is not a characteristic of a computer?","hint":"Think about what makes a computer different from a human.","gF":[{"text":"Speed","qt":false,"ulb":"Computers are known for their high speed in performing calculations and tasks."},{"text":"Accuracy","qt":false,"ulb":"Computers are highly accurate in their calculations as long as the input data and instructions are correct."},{"text":"Creativity","qt":true,"ulb":"Computers are not inherently creative. They can only execute instructions given to them by humans, even in fields like art or music generation."},{"text":"Diligence","qt":false,"ulb":"Computers can perform tasks tirelessly and repeatedly without getting tired or losing concentration."}]},{"sua":0,"question":"What is the primary purpose of a computer's bus?","hint":"Think of a highway system for data inside the computer.","gF":[{"text":"To provide power to the components","qt":false,"ulb":"The power supply unit (PSU) handles the distribution of power."},{"text":"To act as a communication system for transferring data between components","qt":true,"ulb":"A bus is a set of parallel wires or electronic pathways that allows different parts of the computer, such as the CPU and RAM, to communicate with each other."},{"text":"To cool the CPU","qt":false,"ulb":"The CPU is cooled by heat sinks and fans, not a bus."},{"text":"To store short-term data","qt":false,"ulb":"Short-term data storage is the function of RAM."}]},{"sua":0,"question":"Which of these is an example of system software?","hint":"This type of software helps manage and protect the computer's basic functions.","gF":[{"text":"Microsoft Word","qt":false,"ulb":"Microsoft Word is an application used for word processing."},{"text":"An antivirus program","qt":true,"ulb":"An antivirus program is a type of utility software, which is a subcategory of system software that helps manage and maintain the computer."},{"text":"Google Chrome","qt":false,"ulb":"Google Chrome is a web browser, which is a type of application software."},{"text":"A video game","qt":false,"ulb":"Video games are a type of application software for entertainment."}]},{"sua":0,"question":"What does the acronym 'RAM' stand for?","hint":"Think about how data is accessed from this type of memory.","gF":[{"text":"Read-Access Memory","qt":false,"ulb":"The correct term is 'Random Access Memory', which refers to how data can be accessed directly, regardless of its physical location."},{"text":"Rapid Access Method","qt":false,"ulb":"This is not the correct term for computer memory."},{"text":"Random Access Memory","qt":true,"ulb":"RAM is an acronym for Random Access Memory, the primary memory used for volatile data storage."},{"text":"Removable Auxiliary Memory","qt":false,"ulb":"This is not the correct term for the computer's primary memory."}]},{"sua":0,"question":"What is the purpose of an instruction set in a CPU?","hint":"This is a set of machine-level commands for the processor.","gF":[{"text":"To manage the computer's network connection","qt":false,"ulb":"Network connections are managed by the operating system and network hardware."},{"text":"To define the basic operations that a CPU can perform","qt":true,"ulb":"An instruction set is the vocabulary of commands that a CPU understands and can execute, such as adding numbers or moving data."},{"text":"To provide a user interface","qt":false,"ulb":"The user interface is provided by the operating system or application software."},{"text":"To cool the CPU during operation","qt":false,"ulb":"Cooling is provided by a heat sink and fan."}]},{"sua":0,"question":"What is a 'port' in the context of computer hardware?","hint":"Think about where you plug in a USB drive or a monitor cable.","gF":[{"text":"A type of software that manages files","qt":false,"ulb":"A file manager is a type of software; it is not a physical port."},{"text":"A physical connection point on a computer for an external device","qt":true,"ulb":"A port is a physical interface that allows peripheral devices like keyboards, mice, and printers to be connected to the computer."},{"text":"A logical address used for networking","qt":false,"ulb":"A logical port is a networking concept, not a physical hardware connection point."},{"text":"A type of memory used for caching","qt":false,"ulb":"Cache memory is a type of high-speed memory within the CPU or motherboard."}]},{"sua":0,"question":"Which of these is an example of an output device?","hint":"This device presents information from the computer to the user.","gF":[{"text":"Keyboard","qt":false,"ulb":"A keyboard is an input device used to enter text and commands."},{"text":"Scanner","qt":false,"ulb":"A scanner is an input device used to convert physical documents into digital images."},{"text":"Webcam","qt":false,"ulb":"A webcam is an input device used to capture video."},{"text":"Speaker","qt":true,"ulb":"Speakers are output devices that produce sound from the computer's audio signals."}]},{"sua":0,"question":"What is the primary role of a computer's 'cache' memory?","hint":"This is a small, high-speed memory located very close to the CPU.","gF":[{"text":"To store the computer's BIOS","qt":false,"ulb":"BIOS is stored in ROM (Read-Only Memory)."},{"text":"To provide long-term storage for user files","qt":false,"ulb":"This is the function of secondary storage, like an SSD or HDD."},{"text":"To temporarily hold frequently accessed data for faster retrieval by the CPU","qt":true,"ulb":"Cache memory is a small, very fast memory designed to store data that the CPU is likely to need again soon, reducing the time it takes to access it from main memory."},{"text":"To cool the CPU","qt":false,"ulb":"The cooling system, including fans and heat sinks, cools the CPU."}]},{"sua":0,"question":"What is the function of the BIOS (Basic Input/Output System)?","hint":"This is the first software to run when you turn on your computer.","gF":[{"text":"To manage all the computer's processes and files","qt":false,"ulb":"The operating system performs this function once the computer has booted up."},{"text":"To control the communication between the CPU and the hard drive","qt":false,"ulb":"The operating system manages this communication, while the BIOS handles the initial startup."},{"text":"To perform the initial startup procedures and load the operating system","qt":true,"ulb":"The BIOS is firmware that is executed when the computer is turned on to initialize the hardware components and load the operating system into memory."},{"text":"To provide a user-friendly graphical interface","qt":false,"ulb":"This is the role of a graphical user interface (GUI), which is part of the operating system."}]},{"sua":0,"question":"What is the main difference between software and hardware?","hint":"Think about what you can physically touch versus what you can only see on the screen.","gF":[{"text":"Hardware is for gaming, and software is for work.","qt":false,"ulb":"Both hardware and software can be used for gaming and work; this distinction is incorrect."},{"text":"Hardware is the physical components of a computer, while software is the set of instructions and data.","qt":true,"ulb":"Hardware is the physical part you can touch, while software is the non-physical programs and data that run on the hardware."},{"text":"Software is required for the internet, and hardware is not.","qt":false,"ulb":"Both hardware (like a modem) and software (like a web browser) are required for internet access."},{"text":"Hardware is always more expensive than software.","qt":false,"ulb":"The cost varies, and many software packages can be very expensive, just as many hardware components can be inexpensive."}]}],"Tl":0
+    };
+
+    const quizContainer = document.getElementById('quiz-container');
+    const quizForm = document.getElementById('quiz-form');
+    const resultSection = document.getElementById('result-section');
+    const certificateContainer = document.getElementById('certificate');
+    const downloadCertBtn = document.getElementById('download-cert-btn');
+    const timerDisplay = document.getElementById('timer');
+
+    let timeLeft = 900; // 15 minutes in seconds
+    let timerInterval;
+
+    // Function to render the quiz questions from the JSON data
+    function renderQuiz() {
+        quizData.Qn.forEach((q, index) => {
+            const questionNumber = index + 1;
+            const questionBlock = document.createElement('div');
+            questionBlock.classList.add('question-block');
+            
+            let optionsHtml = '';
+            q.gF.forEach((option, optionIndex) => {
+                const optionValue = String.fromCharCode(97 + optionIndex); // a, b, c, d
+                optionsHtml += `
+                    <li>
+                        <label>
+                            <input type="radio" name="q${questionNumber}" value="${optionValue}">
+                            ${option.text}
+                        </label>
+                    </li>
+                `;
+            });
+            
+            questionBlock.innerHTML = `
+                <div class="question-number">${questionNumber}.</div>
+                <div class="question-text">${q.question}</div>
+                <ul class="options">${optionsHtml}</ul>
+            `;
+            quizContainer.appendChild(questionBlock);
+        });
+        startTimer();
+    }
+
+    function updateTimer() {
+        if (timeLeft <= 0) {
+            endQuiz();
+            return;
+        }
+        
+        timeLeft--;
+        const minutes = Math.floor(timeLeft / 60);
+        const seconds = timeLeft % 60;
+        timerDisplay.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    }
+
+    function startTimer() {
+        timerInterval = setInterval(updateTimer, 1000);
+    }
+
+    function endQuiz() {
+        clearInterval(timerInterval);
+        const form = document.getElementById('quiz-form');
+        const submitEvent = new Event('submit', { bubbles: true, cancelable: true });
+        form.dispatchEvent(submitEvent);
+        const inputs = form.getElementsByTagName('input');
+        for (let i = 0; i < inputs.length; i++) {
+            inputs[i].disabled = true;
+        }
+        document.getElementById('submit-btn').disabled = true;
+    }
+
+    // Function to get the correct answers from the JSON data
+    function getCorrectAnswers() {
+        const correctAnswers = {};
+        quizData.Qn.forEach((q, index) => {
+            const questionId = `q${index + 1}`;
+            q.gF.forEach((option, optionIndex) => {
+                if (option.qt) {
+                    correctAnswers[questionId] = String.fromCharCode(97 + optionIndex);
+                }
+            });
+        });
+        return correctAnswers;
+    }
+
+    // Handle quiz submission
+    quizForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        clearInterval(timerInterval); // Stop the timer on manual submission
+
+        let score = 0;
+        const correctAnswers = getCorrectAnswers();
+        const formData = new FormData(quizForm);
+        const totalQuestions = quizData.Qn.length;
+
+        for (const [questionId, answer] of formData.entries()) {
+            if (correctAnswers[questionId] === answer) {
+                score++;
+            }
+        }
+
+        const percentage = (score / totalQuestions) * 100;
+        resultSection.textContent = `You scored ${score} out of ${totalQuestions} (${percentage.toFixed(0)}%).`;
+        resultSection.style.display = 'block';
+
+        if (percentage >= 70) { // Example passing score
+            showCertificate(percentage);
+        } else {
+            // Using a custom message box instead of alert()
+            const messageBox = document.createElement('div');
+            messageBox.style.cssText = "position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); background-color:#fff; padding:20px; border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,0.2); z-index:1000;";
+            messageBox.innerHTML = `
+                <p>You need to score 70% or higher to receive a certificate. Please try again!</p>
+                <button onclick="this.parentNode.remove()">OK</button>
+            `;
+            document.body.appendChild(messageBox);
+        }
+    });
+
+    // Function to display the certificate
+    function showCertificate(score) {
+        // Using a custom message box for user input instead of multiple prompts
+        const inputModal = document.createElement('div');
+        inputModal.style.cssText = "position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); background-color:#fff; padding:30px; border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,0.2); z-index:1000;";
+        inputModal.innerHTML = `
+            <h2>Enter your details for the certificate</h2>
+            <p>Full Name: <input type="text" id="modal-name-input"></p>
+            <p>Course: <input type="text" id="modal-course-input"></p>
+            <p>Year: <input type="text" id="modal-year-input"></p>
+            <p>Section: <input type="text" id="modal-section-input"></p>
+            <button id="modal-submit-btn">Generate Certificate</button>
+        `;
+        document.body.appendChild(inputModal);
+
+        document.getElementById('modal-submit-btn').addEventListener('click', () => {
+            const studentName = document.getElementById('modal-name-input').value;
+            const courseName = document.getElementById('modal-course-input').value;
+            const yearLevel = document.getElementById('modal-year-input').value;
+            const sectionName = document.getElementById('modal-section-input').value;
+
+            if (studentName && courseName && yearLevel && sectionName) {
+                document.getElementById('student-name').textContent = studentName;
+                document.getElementById('final-score').textContent = score.toFixed(0);
+                document.getElementById('date-issued').textContent = new Date().toLocaleDateString();
+                document.getElementById('course-name').textContent = courseName;
+                document.getElementById('year-level').textContent = yearLevel;
+                document.getElementById('section-name').textContent = sectionName;
+
+                quizForm.style.display = 'none';
+                resultSection.style.display = 'none';
+                certificateContainer.style.display = 'block';
+                downloadCertBtn.style.display = 'block';
+                inputModal.remove();
+            } else {
+                alert('Please fill out all fields.');
+            }
+        });
+    }
+
+    // Handle certificate download as an image
+    downloadCertBtn.addEventListener('click', function() {
+        html2canvas(document.getElementById('certificate')).then(function(canvas) {
+            const link = document.createElement('a');
+            link.download = 'certificate.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        });
+    });
+
+    // Initial render
+    window.onload = renderQuiz;
+</script>
 
 </body>
 </html>

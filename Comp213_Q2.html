@@ -1,0 +1,554 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming Fundamentals Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin: 0 auto 20px auto;
+        }
+        .header, .footer {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 10px;
+        }
+        .header h1 {
+            color: #4a90e2;
+            font-size: 1.5em;
+            margin: 0;
+        }
+        .footer p {
+            color: #777;
+            font-size: 0.9em;
+            margin: 0;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #4a90e2;
+        }
+        #registration-form, #quiz-container, #result-container {
+            margin-top: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input {
+            width: 97%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: #4a90e2;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #3a79d0;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            background-color: #fafafa;
+        }
+        .question p {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-top: 0;
+        }
+        .options-list {
+            list-style: none;
+            padding: 0;
+        }
+        .options-list li {
+            margin-bottom: 10px;
+        }
+        .options-list label {
+            display: block;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .options-list label:hover {
+            background-color: #eef;
+        }
+        .options-list input[type="radio"] {
+            margin-right: 10px;
+        }
+        #quiz-container {
+            display: none;
+        }
+        #result-container {
+            text-align: center;
+            display: none;
+        }
+        #certificate-btn {
+            margin-top: 20px;
+            background-color: #28a745;
+        }
+        #certificate-btn:hover {
+            background-color: #218838;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+
+<div class="header">
+    <h1>Comp 213 - Computer Fundamentals and Programming</h1>
+</div>
+
+<div class="container">
+    <div id="registration-form">
+        <h2>Programming Fundamentals Quiz</h2>
+        <h2>Student Registration</h2>
+        <div class="form-group">
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname" required>
+        </div>
+        <div class="form-group">
+            <label for="course">Course:</label>
+            <input type="text" id="course" required>
+        </div>
+        <div class="form-group">
+            <label for="year">Year:</label>
+            <input type="text" id="year" required>
+        </div>
+        <div class="form-group">
+            <label for="section">Section:</label>
+            <input type="text" id="section" required>
+        </div>
+        <button class="btn" onclick="startQuiz()">Start Quiz</button>
+    </div>
+
+    <div id="quiz-container">
+        <h2>Quiz Questions</h2>
+        <form id="quiz-form"></form>
+        <button class="btn" onclick="submitQuiz()">Submit Quiz</button>
+    </div>
+
+    <div id="result-container">
+        <h2>Quiz Results</h2>
+        <p>Congratulations, <span id="student-name"></span>!</p>
+        <p>You scored: <span id="score-display"></span> / 25</p>
+        <button id="certificate-btn" class="btn" onclick="generateCertificate()">Download Certificate</button>
+    </div>
+</div>
+
+<div class="footer">
+    <p>2025SirLavz | RONALD T. LAVA, MSIT | Institute of Computer Studies</p>
+</div>
+
+<script>
+    const questions = [
+        {
+            question: "What is the primary function of a program in the context of computer science?",
+            options: [
+                "To serve as a physical component of the computer.",
+                "To store large amounts of data without any specific purpose.",
+                "To provide a set of instructions for the computer to execute a task.",
+                "To connect the computer to the internet."
+            ],
+            answer: 2
+        },
+        {
+            question: "An algorithm is best described as:",
+            options: [
+                "A type of programming language.",
+                "A specific software application.",
+                "A step-by-step procedure for solving a problem.",
+                "A physical device used for calculations."
+            ],
+            answer: 2
+        },
+        {
+            question: "Which of the following is NOT a characteristic of a good algorithm?",
+            options: [
+                "It must be finite.",
+                "It must be precise and unambiguous.",
+                "It must produce at least one output.",
+                "It must be written in a specific programming language."
+            ],
+            answer: 3
+        },
+        {
+            question: "A flowchart is a graphical representation of:",
+            options: [
+                "Computer hardware components.",
+                "A programming language's syntax.",
+                "The sequence of operations in an algorithm.",
+                "The memory usage of a program."
+            ],
+            answer: 2
+        },
+        {
+            question: "Which symbol in a flowchart is used to represent the start or end of a program?",
+            options: [
+                "Rectangle.",
+                "Diamond.",
+                "Oval (Terminator).",
+                "Parallelogram."
+            ],
+            answer: 2
+        },
+        {
+            question: "In a flowchart, what does a diamond symbol typically represent?",
+            options: [
+                "A data input or output operation.",
+                "A decision point with multiple paths.",
+                "A specific processing step.",
+                "The start of the program."
+            ],
+            answer: 1
+        },
+        {
+            question: "Which of the following is an example of a 'sequence' control structure in programming?",
+            options: [
+                "An `if-else` statement.",
+                "A `for` loop.",
+                "Steps that are executed one after the other in order.",
+                "A function that calls itself."
+            ],
+            answer: 2
+        },
+        {
+            question: "What is the primary purpose of comments in a programming code?",
+            options: [
+                "To change the output of the program.",
+                "To make the program run faster.",
+                "To provide explanations for human readers.",
+                "To store temporary data."
+            ],
+            answer: 2
+        },
+        {
+            question: "A `while` loop is an example of which control structure?",
+            options: [
+                "Sequence.",
+                "Selection.",
+                "Repetition (Iteration).",
+                "Input/Output."
+            ],
+            answer: 2
+        },
+        {
+            question: "Which of the following is a common symbol for an input/output operation in a flowchart?",
+            options: [
+                "Rectangle.",
+                "Diamond.",
+                "Parallelogram.",
+                "Circle."
+            ],
+            answer: 2
+        },
+        {
+            question: "What is the term for a logical error that causes a program to produce incorrect output, but does not cause it to crash?",
+            options: [
+                "Syntax Error.",
+                "Runtime Error.",
+                "Logic Error.",
+                "Hardware Error."
+            ],
+            answer: 2
+        },
+        {
+            question: "Which of the following best defines a 'variable' in programming?",
+            options: [
+                "A fixed value that cannot be changed.",
+                "A container for a value that can be changed.",
+                "A set of instructions to perform a task.",
+                "A symbol used to start a flowchart."
+            ],
+            answer: 1
+        },
+        {
+            question: "What is 'pseudocode'?",
+            options: [
+                "A type of machine language.",
+                "A graphical representation of an algorithm.",
+                "A detailed programming language.",
+                "An informal, high-level description of an algorithm."
+            ],
+            answer: 3
+        },
+        {
+            question: "What is the purpose of an `if-else` statement?",
+            options: [
+                "To repeat a block of code a specific number of times.",
+                "To perform different actions based on a condition.",
+                "To define a new variable.",
+                "To get input from the user."
+            ],
+            answer: 1
+        },
+        {
+            question: "In a flowchart, what does a rectangle with two vertical lines inside it typically represent?",
+            options: [
+                "A sub-process or predefined process.",
+                "A loop.",
+                "A decision.",
+                "An input/output."
+            ],
+            answer: 0
+        },
+        {
+            question: "What is a 'bug' in programming?",
+            options: [
+                "A type of computer virus.",
+                "A feature of the code.",
+                "A physical component of the computer.",
+                "An error in a program that causes it to behave unexpectedly."
+            ],
+            answer: 3
+        },
+        {
+            question: "The process of finding and fixing errors in a program is called:",
+            options: [
+                "Compiling.",
+                "Debugging.",
+                "Executing.",
+                "Flowcharting."
+            ],
+            answer: 1
+        },
+        {
+            question: "In the context of programming, what is a 'string'?",
+            options: [
+                "A type of number with a decimal point.",
+                "A data type used to represent text.",
+                "A special command to end a program.",
+                "A flow of electricity in a circuit."
+            ],
+            answer: 1
+        },
+        {
+            question: "Which of the following describes 'high-level programming language'?",
+            options: [
+                "A language that uses binary code directly.",
+                "A language that is close to human language and easy to read.",
+                "A language that can only be used on a single computer.",
+                "A language that only uses mathematical symbols."
+            ],
+            answer: 1
+        },
+        {
+            question: "What is the function of a 'compiler'?",
+            options: [
+                "To run a program step by step.",
+                "To translate a program from a high-level language into machine code.",
+                "To create a flowchart from an algorithm.",
+                "To find and fix all errors automatically."
+            ],
+            answer: 1
+        },
+        {
+            question: "An 'iteration' is another term for:",
+            options: [
+                "Making a decision.",
+                "A sequence of steps.",
+                "Repeating a set of instructions.",
+                "Defining a new function."
+            ],
+            answer: 2
+        },
+        {
+            question: "What is the purpose of an 'integer' data type?",
+            options: [
+                "To store text and characters.",
+                "To store whole numbers without a decimal point.",
+                "To store numbers with a decimal point.",
+                "To store true or false values."
+            ],
+            answer: 1
+        },
+        {
+            question: "Which of the following is a common use case for a `for` loop?",
+            options: [
+                "Executing a set of instructions an indefinite number of times.",
+                "Making a decision based on a condition.",
+                "Executing a set of instructions a fixed number of times.",
+                "Processing input from the user."
+            ],
+            answer: 2
+        },
+        {
+            question: "A flowchart that represents a program's logic is typically read in what direction?",
+            options: [
+                "From right to left.",
+                "From the bottom up.",
+                "Randomly, depending on the symbols.",
+                "From top to bottom."
+            ],
+            answer: 3
+        },
+        {
+            question: "What is the primary difference between an algorithm and a program?",
+            options: [
+                "An algorithm is only for calculations, while a program is for all tasks.",
+                "An algorithm is a conceptual plan; a program is the implementation of that plan.",
+                "An algorithm must be written in a specific language, while a program can be in any language.",
+                "There is no difference; the terms are interchangeable."
+            ],
+            answer: 1
+        }
+    ];
+
+    let studentData = {};
+    let score = 0;
+
+    function startQuiz() {
+        const fullname = document.getElementById('fullname').value;
+        const course = document.getElementById('course').value;
+        const year = document.getElementById('year').value;
+        const section = document.getElementById('section').value;
+
+        if (fullname && course && year && section) {
+            studentData = { fullname, course, year, section };
+            document.getElementById('registration-form').style.display = 'none';
+            document.getElementById('quiz-container').style.display = 'block';
+            renderQuestions();
+        } else {
+            alert('Please fill out all the registration fields.');
+        }
+    }
+
+    function renderQuestions() {
+        const quizForm = document.getElementById('quiz-form');
+        quizForm.innerHTML = '';
+        questions.forEach((q, index) => {
+            const questionDiv = document.createElement('div');
+            questionDiv.className = 'question';
+            let optionsHtml = '';
+            q.options.forEach((option, i) => {
+                optionsHtml += `
+                    <li>
+                        <label>
+                            <input type="radio" name="question-${index}" value="${i}">
+                            ${option}
+                        </label>
+                    </li>
+                `;
+            });
+            questionDiv.innerHTML = `
+                <p>Q${index + 1}: ${q.question}</p>
+                <ul class="options-list">${optionsHtml}</ul>
+            `;
+            quizForm.appendChild(questionDiv);
+        });
+    }
+
+    function submitQuiz() {
+        score = 0;
+        let allAnswered = true;
+        questions.forEach((q, index) => {
+            const selectedOption = document.querySelector(`input[name="question-${index}"]:checked`);
+            if (!selectedOption) {
+                allAnswered = false;
+            } else if (parseInt(selectedOption.value) === q.answer) {
+                score++;
+            }
+        });
+
+        if (allAnswered) {
+            showResult();
+        } else {
+            alert('Please answer all questions before submitting.');
+        }
+    }
+
+    function showResult() {
+        document.getElementById('quiz-container').style.display = 'none';
+        document.getElementById('result-container').style.display = 'block';
+        document.getElementById('student-name').textContent = studentData.fullname;
+        document.getElementById('score-display').textContent = score;
+    }
+
+    async function generateCertificate() {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF('landscape', 'mm', 'a4');
+        
+        const certTemplate = `
+        <div style="width: 100%; height: 100%; text-align: center; border: 10px solid #4a90e2; padding: 20px; box-sizing: border-box; font-family: 'Arial', sans-serif;">
+            <h1 style="color: #4a90e2; font-size: 36px; margin-top: 50px;">Certificate of Achievement</h1>
+            <h2 style="font-size: 24px; color: #333; margin-top: 20px;">for</h2>
+            <h3 style="font-size: 30px; margin: 10px 0; border-bottom: 2px solid #333; display: inline-block; padding: 0 10px;">${studentData.fullname}</h3>
+            <p style="font-size: 20px; color: #555; margin-top: 20px;">This certifies that they have successfully completed the</p>
+            <p style="font-size: 24px; font-weight: bold; margin-top: 10px;">Introduction to Programming, Algorithm and Flowchart Quiz</p>
+            <p style="font-size: 20px; margin-top: 20px;">
+                Achieving a score of <span style="font-weight: bold; font-size: 24px;">${score}</span> out of <span style="font-weight: bold; font-size: 24px;">25</span>.
+            </p>
+            <div style="margin-top: 40px; font-size: 18px; color: #666;">
+                <p>Course: ${studentData.course}</p>
+                <p>Year & Section: ${studentData.year} - ${studentData.section}</p>
+            </div>
+            <p style="margin-top: 50px; font-size: 18px; color: #777;">Date: ${new Date().toLocaleDateString()}</p>
+        </div>
+        `;
+
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = certTemplate;
+        tempDiv.style.position = 'absolute';
+        tempDiv.style.left = '-9999px';
+        tempDiv.style.width = '297mm';
+        tempDiv.style.height = '210mm';
+        document.body.appendChild(tempDiv);
+        
+        const canvas = await html2canvas(tempDiv, { 
+            scale: 2,
+            useCORS: true,
+            allowTaint: true,
+        });
+        const imgData = canvas.toDataURL('image/png');
+
+        const imgWidth = doc.internal.pageSize.getWidth();
+        const imgHeight = canvas.height * imgWidth / canvas.width;
+        
+        doc.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
+
+        doc.save(`${studentData.fullname}_certificate.pdf`);
+        document.body.removeChild(tempDiv);
+    }
+</script>
+
+</body>
+</html>
+
